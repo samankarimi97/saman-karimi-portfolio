@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="de" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Saman Karimi — M.Sc. Artificial Intelligence candidate combining applied AI, business intelligence, project delivery, and construction engineering experience.">
+  <meta id="meta-description" name="description" content="Portfolio von Saman Karimi – Künstliche Intelligenz, Projektabwicklung, Business Intelligence und digitale Transformation.">
   <meta name="author" content="Saman Karimi">
+  <link rel="canonical" href="https://samankarimi97.github.io/saman-karimi-portfolio/">
   <meta name="theme-color" content="#111827">
-  <meta property="og:title" content="Saman Karimi | AI, Operations & Project Delivery">
-  <meta property="og:description" content="Applied AI and project-delivery portfolio: Python, NLP, BI, digital transformation, and ConTech.">
+  <meta id="og-title" property="og:title" content="Saman Karimi | KI, Operations & Projektabwicklung">
+  <meta id="og-description" property="og:description" content="Angewandte KI und reale Projekterfahrung: Python, NLP, Business Intelligence, digitale Transformation und ConTech.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://samankarimi97.github.io/saman-karimi-portfolio/">
   <meta name="twitter:card" content="summary">
-  <title>Saman Karimi | AI, Operations & Project Delivery</title>
+  <title>Saman Karimi | KI, Operations & Projektabwicklung</title>
 
   <script type="application/ld+json">
   {
@@ -31,14 +32,6 @@
     "sameAs": [
       "https://www.linkedin.com/in/samankarimi97/",
       "https://github.com/samankarimi97"
-    ],
-    "knowsAbout": [
-      "Artificial Intelligence",
-      "Natural Language Processing",
-      "Business Intelligence",
-      "Project Management",
-      "Digital Transformation",
-      "Building Information Modeling"
     ]
   }
   </script>
@@ -47,41 +40,39 @@
     :root {
       --sidebar: 292px;
       --bg: #f5f7fb;
-      --surface: rgba(255, 255, 255, 0.88);
-      --surface-solid: #ffffff;
+      --surface: rgba(255,255,255,.88);
+      --surface-solid: #fff;
       --surface-alt: #eef2ff;
       --text: #172033;
       --muted: #667085;
       --soft: #98a2b3;
-      --line: rgba(23, 32, 51, 0.10);
+      --line: rgba(23,32,51,.10);
       --primary: #5b5ce2;
       --primary-strong: #4143bd;
       --accent: #06b6d4;
       --success: #059669;
-      --nav: #111827;
       --nav-muted: #94a3b8;
-      --nav-line: rgba(255, 255, 255, 0.10);
-      --shadow: 0 22px 60px rgba(15, 23, 42, 0.10);
-      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
-      --radius-xl: 28px;
+      --nav-line: rgba(255,255,255,.10);
+      --shadow: 0 22px 60px rgba(15,23,42,.10);
+      --shadow-soft: 0 10px 30px rgba(15,23,42,.06);
       --max: 1180px;
     }
 
     html[data-theme="dark"] {
       --bg: #0d111b;
-      --surface: rgba(21, 28, 43, 0.88);
+      --surface: rgba(21,28,43,.88);
       --surface-solid: #151c2b;
       --surface-alt: #1d2540;
       --text: #f2f4f7;
       --muted: #a8b0bf;
       --soft: #7f899a;
-      --line: rgba(255, 255, 255, 0.10);
+      --line: rgba(255,255,255,.10);
       --primary: #8b8cf5;
       --primary-strong: #b1b2ff;
       --accent: #22d3ee;
       --success: #34d399;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.30);
-      --shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.22);
+      --shadow: 0 24px 70px rgba(0,0,0,.30);
+      --shadow-soft: 0 12px 34px rgba(0,0,0,.22);
     }
 
     * { box-sizing: border-box; }
@@ -90,8 +81,8 @@
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at 90% 0%, rgba(91, 92, 226, 0.10), transparent 30rem),
-        radial-gradient(circle at 70% 45%, rgba(6, 182, 212, 0.07), transparent 26rem),
+        radial-gradient(circle at 90% 0%, rgba(91,92,226,.10), transparent 30rem),
+        radial-gradient(circle at 70% 45%, rgba(6,182,212,.07), transparent 26rem),
         var(--bg);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -101,64 +92,55 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { color: inherit; }
+    button { font: inherit; color: inherit; }
     svg { display: block; }
+
     .skip-link {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      z-index: 100;
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: #fff;
-      color: #111827;
-      font-weight: 800;
-      transform: translateY(-160%);
-      transition: transform .2s ease;
+      position: fixed; top: 12px; left: 12px; z-index: 100;
+      padding: 10px 14px; border-radius: 10px; background: #fff; color: #111827;
+      font-weight: 800; transform: translateY(-160%); transition: transform .2s ease;
     }
     .skip-link:focus { transform: translateY(0); }
 
     .sidebar {
-      position: fixed;
-      inset: 0 auto 0 0;
-      z-index: 40;
-      width: var(--sidebar);
-      display: flex;
-      flex-direction: column;
+      position: fixed; inset: 0 auto 0 0; z-index: 40;
+      width: var(--sidebar); display: flex; flex-direction: column;
       background:
-        radial-gradient(circle at 15% 0%, rgba(91, 92, 226, .28), transparent 20rem),
+        radial-gradient(circle at 15% 0%, rgba(91,92,226,.28), transparent 20rem),
         linear-gradient(180deg, #111827, #0b1020 72%);
-      color: #f8fafc;
-      border-right: 1px solid var(--nav-line);
-      overflow-y: auto;
-      box-shadow: 18px 0 50px rgba(15, 23, 42, 0.14);
+      color: #f8fafc; border-right: 1px solid var(--nav-line);
+      overflow-y: auto; box-shadow: 18px 0 50px rgba(15,23,42,.14);
     }
 
     .sidebar-head { padding: 30px 26px 22px; border-bottom: 1px solid var(--nav-line); }
     .monogram {
-      width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 17px;
-      border-radius: 16px; background: linear-gradient(135deg, #7c7ef5, #22d3ee);
+      width: 48px; height: 48px; display: grid; place-items: center;
+      margin-bottom: 17px; border-radius: 16px;
+      background: linear-gradient(135deg, #7c7ef5, #22d3ee);
       color: #0b1020; font-weight: 950; letter-spacing: -.04em;
-      box-shadow: 0 12px 30px rgba(34, 211, 238, .16);
+      box-shadow: 0 12px 30px rgba(34,211,238,.16);
     }
     .sidebar-name { margin: 0; font-size: 1.35rem; letter-spacing: -.025em; }
     .sidebar-role { margin: 6px 0 0; color: #b7c0d0; font-size: .88rem; line-height: 1.45; }
+
     .status {
-      display: flex; align-items: flex-start; gap: 10px; margin: 18px 0 0; padding: 12px;
-      border: 1px solid rgba(52, 211, 153, .18); border-radius: 14px;
-      background: rgba(5, 150, 105, .10); color: #d1fae5; font-size: .79rem; line-height: 1.45;
+      display: flex; align-items: flex-start; gap: 10px;
+      margin: 18px 0 0; padding: 12px;
+      border: 1px solid rgba(52,211,153,.18); border-radius: 14px;
+      background: rgba(5,150,105,.10); color: #d1fae5;
+      font-size: .79rem; line-height: 1.45;
     }
     .status-dot {
-      flex: 0 0 auto; width: 8px; height: 8px; margin-top: 5px; border-radius: 50%;
-      background: #34d399; box-shadow: 0 0 0 5px rgba(52, 211, 153, .12);
+      flex: 0 0 auto; width: 8px; height: 8px; margin-top: 5px;
+      border-radius: 50%; background: #34d399;
+      box-shadow: 0 0 0 5px rgba(52,211,153,.12);
     }
 
     .sidebar-nav { display: grid; gap: 5px; padding: 18px 14px; }
     .nav-link {
-      display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 13px;
-      border: 1px solid transparent; border-radius: 12px; color: var(--nav-muted);
-      font-size: .91rem; font-weight: 650;
+      display: flex; align-items: center; gap: 12px; min-height: 44px;
+      padding: 0 13px; border: 1px solid transparent; border-radius: 12px;
+      color: var(--nav-muted); font-size: .91rem; font-weight: 650;
       transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
     }
     .nav-link svg { width: 18px; height: 18px; }
@@ -166,40 +148,64 @@
     .nav-link.active {
       color: #fff;
       background: linear-gradient(90deg, rgba(91,92,226,.24), rgba(34,211,238,.08));
-      border-color: rgba(139, 140, 245, .22);
+      border-color: rgba(139,140,245,.22);
     }
 
     .sidebar-foot { margin-top: auto; padding: 18px 20px 24px; border-top: 1px solid var(--nav-line); }
+
+    .language-switch {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+      padding: 4px; border: 1px solid var(--line);
+      border-radius: 12px; background: var(--surface-solid);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .top-language-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 14px;
+    }
+
+    .top-language-row .language-switch {
+      width: 112px;
+    }
+    .lang-btn {
+      min-height: 34px; border: 0; border-radius: 9px; background: transparent;
+      color: #8f9bb0; cursor: pointer; font-size: .76rem; font-weight: 850;
+    }
+    .lang-btn.active { background: rgba(255,255,255,.12); color: #fff; }
+
     .side-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
     .side-btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 41px;
-      padding: 0 10px; border: 1px solid var(--nav-line); border-radius: 11px;
-      background: rgba(255,255,255,.04); color: #e5e7eb; cursor: pointer;
-      font-size: .78rem; font-weight: 750;
-      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 41px; padding: 0 10px; border: 1px solid var(--nav-line);
+      border-radius: 11px; background: rgba(255,255,255,.04);
+      color: #e5e7eb; cursor: pointer; font-size: .78rem; font-weight: 750;
     }
-    .side-btn:hover { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18); transform: translateY(-1px); }
+    .side-btn:hover { background: rgba(255,255,255,.09); transform: translateY(-1px); }
     .side-meta { margin: 14px 0 0; color: #7f8a9f; font-size: .72rem; text-align: center; }
 
     .mobile-bar {
       display: none; position: sticky; top: 0; z-index: 35; min-height: 66px;
       align-items: center; justify-content: space-between; padding: 0 18px;
-      background: rgba(17, 24, 39, .95); color: #fff; border-bottom: 1px solid var(--nav-line);
-      backdrop-filter: blur(12px);
+      background: rgba(17,24,39,.95); color: #fff;
+      border-bottom: 1px solid var(--nav-line); backdrop-filter: blur(12px);
     }
     .mobile-brand { font-weight: 850; }
-    .menu-btn {
-      width: 42px; height: 42px; display: grid; place-items: center;
-      border: 1px solid var(--nav-line); border-radius: 12px;
-      background: rgba(255,255,255,.05); cursor: pointer;
+    .mobile-actions { display: flex; gap: 8px; align-items: center; }
+    .mobile-lang, .menu-btn {
+      border: 1px solid var(--nav-line); border-radius: 11px;
+      background: rgba(255,255,255,.05); color: #fff; cursor: pointer;
     }
+    .mobile-lang { min-width: 44px; height: 38px; font-size: .72rem; font-weight: 850; }
+    .menu-btn { width: 42px; height: 42px; display: grid; place-items: center; }
 
     .page { min-height: 100vh; margin-left: var(--sidebar); }
     .content { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; padding: 52px 0 72px; }
     .section { padding: 34px 0 54px; scroll-margin-top: 32px; }
 
     .hero {
-      position: relative; overflow: hidden; padding: clamp(30px, 5vw, 58px);
+      position: relative; overflow: hidden; padding: clamp(30px,5vw,58px);
       border: 1px solid var(--line); border-radius: 34px;
       background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(239,242,255,.86)), var(--surface-solid);
       box-shadow: var(--shadow);
@@ -208,52 +214,91 @@
       background: linear-gradient(135deg, rgba(25,34,53,.96), rgba(27,34,64,.92)), var(--surface-solid);
     }
     .hero::after {
-      content: ""; position: absolute; width: 340px; height: 340px; right: -120px; top: -120px;
-      border-radius: 50%; background: radial-gradient(circle, rgba(34,211,238,.22), rgba(91,92,226,.08), transparent 68%);
-      pointer-events: none;
+      content: ""; position: absolute; width: 340px; height: 340px;
+      right: -120px; top: -120px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(34,211,238,.22), rgba(91,92,226,.08), transparent 68%);
     }
-    .hero-inner { position: relative; z-index: 2; max-width: 900px; }
-    .kicker {
-      display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px; padding: 7px 12px;
-      border: 1px solid rgba(91,92,226,.16); border-radius: 999px;
-      background: var(--surface-alt); color: var(--primary-strong);
-      font-size: .8rem; font-weight: 850; letter-spacing: .02em;
-    }
-    .kicker span { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px rgba(6,182,212,.10); }
-    h1 { max-width: 920px; margin: 0; font-size: clamp(2.65rem, 6vw, 5.7rem); line-height: .98; letter-spacing: -.062em; }
-    .gradient-text { color: transparent; background: linear-gradient(115deg, var(--primary), #7c3aed 50%, var(--accent)); -webkit-background-clip: text; background-clip: text; }
-    .hero-copy { max-width: 820px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1.02rem, 1.55vw, 1.18rem); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .hero-inner { position: relative; z-index: 2; max-width: 930px; }
 
+    .kicker {
+      display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px;
+      padding: 7px 12px; border: 1px solid rgba(91,92,226,.16);
+      border-radius: 999px; background: var(--surface-alt);
+      color: var(--primary-strong); font-size: .8rem; font-weight: 850;
+    }
+    .kicker span {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(6,182,212,.10);
+    }
+
+    h1 {
+      max-width: 940px; margin: 0;
+      font-size: clamp(2.65rem,6vw,5.7rem); line-height: .98; letter-spacing: -.062em;
+    }
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(115deg, var(--primary), #7c3aed 50%, var(--accent));
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .hero-copy { max-width: 830px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1.02rem,1.55vw,1.18rem); }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px;
-      padding: 0 17px; border: 1px solid var(--line); border-radius: 13px;
-      background: var(--surface-solid); color: var(--text); font-weight: 780;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 46px; padding: 0 17px; border: 1px solid var(--line);
+      border-radius: 13px; background: var(--surface-solid); color: var(--text);
+      font-weight: 780; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease;
     }
     .btn svg { width: 18px; height: 18px; }
     .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
-    .btn-primary { border-color: transparent; background: linear-gradient(135deg, var(--primary), var(--primary-strong)); color: white; }
+    .btn-primary { border-color: transparent; background: linear-gradient(135deg,var(--primary),var(--primary-strong)); color: #fff; }
 
-    .metric-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 35px; }
-    .metric { padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.58); backdrop-filter: blur(10px); }
+    .metric-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 35px; }
+    .metric {
+      padding: 18px; border: 1px solid var(--line); border-radius: 17px;
+      background: rgba(255,255,255,.58); backdrop-filter: blur(10px);
+    }
     html[data-theme="dark"] .metric { background: rgba(255,255,255,.035); }
-    .metric strong { display: block; font-size: 1.55rem; letter-spacing: -.04em; }
+    .metric strong { display: block; font-size: 1.42rem; letter-spacing: -.04em; }
     .metric span { display: block; margin-top: 2px; color: var(--muted); font-size: .82rem; }
 
-    .section-head { display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 22px; margin-bottom: 22px; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+      align-items: end;
+      gap: 34px;
+      margin-bottom: 22px;
+    }
+    .section-head > div:first-child { min-width: 0; }
     .section-index { color: var(--primary); font-size: .75rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    .section-head h2 { margin: 2px 0 0; font-size: clamp(1.85rem, 3vw, 2.7rem); letter-spacing: -.045em; }
-    .section-head p { max-width: 650px; justify-self: end; margin: 0; color: var(--muted); text-align: right; }
+    .section-head h2 { margin: 2px 0 0; font-size: clamp(1.85rem,3vw,2.7rem); letter-spacing: -.045em; }
+    .section-head p {
+      width: 100%;
+      max-width: 360px;
+      justify-self: end;
+      margin: 0;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.55;
+    }
 
-    .panel { border: 1px solid var(--line); border-radius: var(--radius-xl); background: var(--surface); box-shadow: var(--shadow-soft); backdrop-filter: blur(12px); }
+    .panel {
+      border: 1px solid var(--line); border-radius: 28px;
+      background: var(--surface); box-shadow: var(--shadow-soft); backdrop-filter: blur(12px);
+    }
+
     .overview-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
     .about-card { padding: 28px; }
     .about-card p { margin: 0; color: var(--muted); }
     .about-card p + p { margin-top: 15px; }
 
     .tracks { display: grid; gap: 12px; padding: 16px; }
-    .track { display: grid; grid-template-columns: 42px 1fr; gap: 13px; align-items: start; padding: 15px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface-solid); transition: transform .2s ease, border-color .2s ease; }
+    .track {
+      display: grid; grid-template-columns: 42px 1fr; gap: 13px;
+      align-items: start; padding: 15px; border: 1px solid var(--line);
+      border-radius: 16px; background: var(--surface-solid);
+      transition: transform .2s ease, border-color .2s ease;
+    }
     .track:hover { transform: translateY(-2px); border-color: rgba(91,92,226,.30); }
     .track-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; background: var(--surface-alt); color: var(--primary); }
     .track-icon svg { width: 20px; height: 20px; }
@@ -261,70 +306,93 @@
     .track p { margin: 4px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
 
     .experience-card { padding: 30px; }
-    .role-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
+    .role-row { display: flex; justify-content: space-between; gap: 18px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
     .role-row h3 { margin: 0; font-size: 1.35rem; letter-spacing: -.025em; }
     .role-company { margin-top: 5px; color: var(--primary); font-weight: 780; }
     .role-meta { color: var(--muted); font-size: .88rem; text-align: right; }
-
-    .responsibility-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px 22px; margin: 22px 0 0; }
+    .responsibility-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px 22px; margin-top: 22px; }
     .responsibility { display: flex; gap: 10px; color: var(--muted); font-size: .91rem; }
-    .check { flex: 0 0 auto; width: 20px; height: 20px; display: grid; place-items: center; margin-top: 2px; border-radius: 7px; background: rgba(5,150,105,.10); color: var(--success); }
+    .check {
+      flex: 0 0 auto; width: 20px; height: 20px; display: grid; place-items: center;
+      margin-top: 2px; border-radius: 7px; background: rgba(5,150,105,.10); color: var(--success);
+    }
     .check svg { width: 13px; height: 13px; }
 
-    .project-scale { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 24px; }
+    .project-scale { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 24px; }
     .scale-card { padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: var(--surface-solid); }
     .scale-card .label { color: var(--soft); font-size: .72rem; font-weight: 850; text-transform: uppercase; letter-spacing: .07em; }
     .scale-card h4 { margin: 7px 0 4px; font-size: 1rem; }
     .scale-card p { margin: 0; color: var(--muted); font-size: .82rem; }
 
-    .decision-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+    .decision-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 18px; }
     .decision-card { padding: 21px; border: 1px solid var(--line); border-radius: 19px; background: var(--surface); box-shadow: var(--shadow-soft); }
     .decision-card .number { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 27px; padding: 0 9px; border-radius: 999px; background: var(--surface-alt); color: var(--primary); font-size: .72rem; font-weight: 900; }
     .decision-card h3 { margin: 12px 0 7px; font-size: 1rem; }
     .decision-card p { margin: 0; color: var(--muted); font-size: .86rem; }
 
     .project-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-    .filter-btn { min-height: 38px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-solid); color: var(--muted); cursor: pointer; font-size: .8rem; font-weight: 800; transition: .2s ease; }
+    .filter-btn {
+      min-height: 38px; padding: 0 14px; border: 1px solid var(--line);
+      border-radius: 999px; background: var(--surface-solid); color: var(--muted);
+      cursor: pointer; font-size: .8rem; font-weight: 800;
+    }
     .filter-btn:hover, .filter-btn.active { border-color: transparent; background: var(--primary); color: #fff; }
 
-    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .project-card { position: relative; display: flex; flex-direction: column; min-height: 315px; padding: 24px; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow-soft); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .projects-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .project-card {
+      display: flex; flex-direction: column; min-height: 315px; padding: 24px;
+      border: 1px solid var(--line); border-radius: 22px;
+      background: var(--surface); box-shadow: var(--shadow-soft);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
     .project-card:hover { transform: translateY(-4px); border-color: rgba(91,92,226,.28); box-shadow: var(--shadow); }
-    .project-type { width: fit-content; margin-bottom: 16px; padding: 6px 10px; border-radius: 999px; background: var(--surface-alt); color: var(--primary-strong); font-size: .72rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
+    .project-type { width: fit-content; margin-bottom: 16px; padding: 6px 10px; border-radius: 999px; background: var(--surface-alt); color: var(--primary-strong); font-size: .72rem; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
     .project-card h3 { margin: 0; font-size: 1.18rem; letter-spacing: -.02em; }
     .project-card p { margin: 10px 0 0; color: var(--muted); font-size: .89rem; }
     .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0; }
     .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-solid); color: var(--muted); font-size: .72rem; font-weight: 750; }
     .project-link { display: inline-flex; align-items: center; gap: 7px; width: fit-content; margin-top: auto; color: var(--primary); font-size: .84rem; font-weight: 850; }
     .project-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
-    .project-link:hover svg { transform: translate(2px, -2px); }
+    .project-link:hover svg { transform: translate(2px,-2px); }
     .project-card[hidden] { display: none; }
 
-    .thesis { position: relative; overflow: hidden; padding: 30px; background: linear-gradient(135deg, rgba(91,92,226,.12), rgba(6,182,212,.08)), var(--surface); }
-    .thesis::after { content: "LLM × BIM"; position: absolute; right: 28px; bottom: -22px; color: rgba(91,92,226,.08); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 950; letter-spacing: -.06em; pointer-events: none; }
+    .thesis {
+      position: relative; overflow: hidden; padding: 30px;
+      background: linear-gradient(135deg, rgba(91,92,226,.12), rgba(6,182,212,.08)), var(--surface);
+    }
+    .thesis::after {
+      content: "LLM × BIM"; position: absolute; right: 28px; bottom: -22px;
+      color: rgba(91,92,226,.08); font-size: clamp(3.5rem,8vw,7rem);
+      font-weight: 950; letter-spacing: -.06em;
+    }
     .thesis-content { position: relative; z-index: 2; max-width: 820px; }
-    .thesis h3 { margin: 0; font-size: clamp(1.35rem, 2.5vw, 2.05rem); letter-spacing: -.035em; }
+    .thesis h3 { margin: 0; font-size: clamp(1.35rem,2.5vw,2.05rem); letter-spacing: -.035em; }
     .thesis p { margin: 13px 0 0; color: var(--muted); }
-    .thesis-list { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-top: 22px; }
-    .thesis-item { padding: 13px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.52); color: var(--muted); font-size: .79rem; font-weight: 750; backdrop-filter: blur(10px); }
+    .thesis-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 22px; }
+    .thesis-item { padding: 13px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.52); color: var(--muted); font-size: .79rem; font-weight: 750; }
     html[data-theme="dark"] .thesis-item { background: rgba(255,255,255,.035); }
 
     .skills-layout { display: grid; grid-template-columns: .76fr 1.24fr; gap: 16px; }
     .skill-nav { display: grid; gap: 9px; height: fit-content; padding: 14px; }
-    .skill-tab { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 0 14px; border: 1px solid transparent; border-radius: 13px; background: transparent; color: var(--muted); cursor: pointer; text-align: left; font-weight: 750; transition: .2s ease; }
+    .skill-tab {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      min-height: 48px; padding: 0 14px; border: 1px solid transparent;
+      border-radius: 13px; background: transparent; color: var(--muted);
+      cursor: pointer; text-align: left; font-weight: 750;
+    }
     .skill-tab span:last-child { color: var(--soft); font-size: .72rem; }
     .skill-tab:hover, .skill-tab.active { border-color: var(--line); background: var(--surface-solid); color: var(--text); }
     .skill-detail { min-height: 360px; padding: 27px; }
     .skill-panel { display: none; }
     .skill-panel.active { display: block; animation: fade .22s ease; }
-    @keyframes fade { from { opacity: .4; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade { from {opacity:.4; transform:translateY(3px)} to {opacity:1; transform:none} }
     .skill-panel h3 { margin: 0 0 8px; font-size: 1.25rem; }
     .skill-panel > p { margin: 0; color: var(--muted); }
     .evidence-list { display: grid; gap: 10px; margin-top: 20px; }
     .evidence { display: grid; grid-template-columns: 13px 1fr; gap: 10px; align-items: start; color: var(--muted); font-size: .88rem; }
     .evidence::before { content: ""; width: 7px; height: 7px; margin-top: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(6,182,212,.09); }
 
-    .education-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .education-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
     .edu-card { padding: 25px; }
     .edu-card .edu-type { color: var(--primary); font-size: .73rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
     .edu-card h3 { margin: 9px 0 6px; font-size: 1.16rem; }
@@ -333,33 +401,44 @@
     .language-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
     .language { padding: 8px 11px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface-solid); color: var(--muted); font-size: .78rem; font-weight: 760; }
 
-    .contact { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 34px; border: 1px solid rgba(255,255,255,.08); border-radius: 28px; background: radial-gradient(circle at 95% 10%, rgba(34,211,238,.22), transparent 18rem), linear-gradient(135deg, #171f34, #101729 62%); color: #fff; box-shadow: var(--shadow); }
-    .contact h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.45rem); letter-spacing: -.04em; }
+    .contact {
+      display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+      padding: 34px; border: 1px solid rgba(255,255,255,.08); border-radius: 28px;
+      background: radial-gradient(circle at 95% 10%, rgba(34,211,238,.22), transparent 18rem), linear-gradient(135deg,#171f34,#101729 62%);
+      color: #fff; box-shadow: var(--shadow);
+    }
+    .contact h2 { margin: 0; font-size: clamp(1.6rem,3vw,2.45rem); letter-spacing: -.04em; }
     .contact p { max-width: 690px; margin: 9px 0 0; color: #aeb8ca; }
     .contact-actions { display: flex; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
     .contact .btn { border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.07); color: #fff; }
     .contact .btn-primary { background: #fff; color: #111827; }
 
-    .toast { position: fixed; right: 20px; bottom: 20px; z-index: 60; padding: 11px 14px; border-radius: 12px; background: #111827; color: #fff; box-shadow: var(--shadow); font-size: .82rem; font-weight: 750; opacity: 0; transform: translateY(12px); pointer-events: none; transition: .22s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast {
+      position: fixed; right: 20px; bottom: 20px; z-index: 60;
+      padding: 11px 14px; border-radius: 12px; background: #111827; color: #fff;
+      box-shadow: var(--shadow); font-size: .82rem; font-weight: 750;
+      opacity: 0; transform: translateY(12px); pointer-events: none; transition: .22s ease;
+    }
+    .toast.show { opacity: 1; transform: none; }
+
     footer { padding: 22px 0 0; color: var(--soft); font-size: .77rem; text-align: center; }
     a:focus-visible, button:focus-visible { outline: 3px solid rgba(34,211,238,.34); outline-offset: 3px; }
 
-    @media (max-width: 1040px) {
+    @media (max-width:1040px) {
       :root { --sidebar: 260px; }
-      .metric-grid { grid-template-columns: 1fr; }
-      .project-scale { grid-template-columns: 1fr; }
+      .metric-grid, .project-scale { grid-template-columns: 1fr; }
       .thesis-list { grid-template-columns: 1fr 1fr; }
       .skills-layout { grid-template-columns: 1fr; }
-      .skill-nav { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .skill-nav { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width:820px) {
       .mobile-bar { display: flex; }
-      .sidebar { width: min(88vw, 310px); transform: translateX(-105%); transition: transform .25s ease; }
+      .top-language-row { display: none; }
+      .sidebar { width: min(88vw,310px); transform: translateX(-105%); transition: transform .25s ease; }
       .sidebar.open { transform: translateX(0); }
       .page { margin-left: 0; }
-      .content { width: min(100% - 28px, var(--max)); padding-top: 24px; }
+      .content { width: min(100% - 28px,var(--max)); padding-top: 24px; }
       .overview-grid, .projects-grid, .education-grid { grid-template-columns: 1fr; }
       .section-head { grid-template-columns: 1fr; gap: 8px; }
       .section-head p { justify-self: start; text-align: left; }
@@ -368,14 +447,16 @@
       .responsibility-grid, .decision-grid { grid-template-columns: 1fr; }
       .contact { grid-template-columns: 1fr; }
       .contact-actions { justify-content: flex-start; }
-      .sidebar-overlay { position: fixed; inset: 0; z-index: 38; background: rgba(2,6,23,.55); opacity: 0; visibility: hidden; transition: .2s ease; }
+      .sidebar-overlay {
+        position: fixed; inset: 0; z-index: 38; background: rgba(2,6,23,.55);
+        opacity: 0; visibility: hidden; transition: .2s ease;
+      }
       .sidebar-overlay.show { opacity: 1; visibility: visible; }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width:560px) {
       .hero { padding: 28px 22px; border-radius: 25px; }
-      h1 { font-size: clamp(2.4rem, 13vw, 3.8rem); }
-      .metric-grid { gap: 9px; }
+      h1 { font-size: clamp(2.35rem,12vw,3.7rem); }
       .hero-actions, .contact-actions { flex-direction: column; }
       .hero-actions .btn, .contact-actions .btn { width: 100%; }
       .thesis-list, .skill-nav { grid-template-columns: 1fr; }
@@ -396,40 +477,79 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main" data-de="Zum Hauptinhalt springen" data-en="Skip to main content">Zum Hauptinhalt springen</a>
 
   <div class="mobile-bar">
     <div class="mobile-brand">Saman Karimi</div>
-    <button class="menu-btn" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
-      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <div class="mobile-actions">
+      <button class="mobile-lang" id="mobileLangButton" type="button" aria-label="Sprache wechseln" data-aria-de="Sprache wechseln" data-aria-en="Switch language">EN</button>
+      <button class="menu-btn" id="menuButton" type="button" aria-label="Navigation öffnen" data-aria-de="Navigation öffnen" data-aria-en="Open navigation" aria-expanded="false">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
   </div>
 
-  <aside class="sidebar" id="sidebar" aria-label="Portfolio navigation">
+  <aside class="sidebar" id="sidebar" aria-label="Portfolio-Navigation" data-aria-de="Portfolio-Navigation" data-aria-en="Portfolio navigation">
     <div class="sidebar-head">
       <div class="monogram" aria-hidden="true">SK</div>
       <h2 class="sidebar-name">Saman Karimi</h2>
-      <p class="sidebar-role">Artificial Intelligence · Project Delivery · Digital Transformation</p>
-      <div class="status"><span class="status-dot" aria-hidden="true"></span><span>Based in Germany.</span></div>
+      <p class="sidebar-role"
+         data-de="Künstliche Intelligenz · Projektabwicklung · Digitale Transformation"
+         data-en="Artificial Intelligence · Project Delivery · Digital Transformation">
+        Künstliche Intelligenz · Projektabwicklung · Digitale Transformation
+      </p>
+      <div class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-de="In Deutschland ansässig."
+              data-en="Based in Germany.">
+          In Deutschland ansässig.
+        </span>
+      </div>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="nav-link active" href="#overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>Overview</a>
-      <a class="nav-link" href="#profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>Profile</a>
-      <a class="nav-link" href="#experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>Experience</a>
-      <a class="nav-link" href="#projects"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>Projects</a>
-      <a class="nav-link" href="#thesis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M8 7h8M8 11h6"/></svg>Thesis</a>
-      <a class="nav-link" href="#skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>Skills & Evidence</a>
-      <a class="nav-link" href="#education"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.5V17l5 2.5 5-2.5v-4.5"/></svg>Education</a>
-      <a class="nav-link" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Contact</a>
+      <a class="nav-link active" href="#overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>
+        <span data-de="Überblick" data-en="Overview">Überblick</span>
+      </a>
+      <a class="nav-link" href="#profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+        <span data-de="Profil" data-en="Profile">Profil</span>
+      </a>
+      <a class="nav-link" href="#experience">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+        <span data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</span>
+      </a>
+      <a class="nav-link" href="#projects">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
+        <span data-de="Projekte" data-en="Projects">Projekte</span>
+      </a>
+      <a class="nav-link" href="#thesis">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M8 7h8M8 11h6"/></svg>
+        <span data-de="Masterarbeit" data-en="Thesis">Masterarbeit</span>
+      </a>
+      <a class="nav-link" href="#skills">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+        <span data-de="Kompetenzen & Nachweise" data-en="Skills & Evidence">Kompetenzen & Nachweise</span>
+      </a>
+      <a class="nav-link" href="#education">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.5V17l5 2.5 5-2.5v-4.5"/></svg>
+        <span data-de="Ausbildung" data-en="Education">Ausbildung</span>
+      </a>
+      <a class="nav-link" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+        <span data-de="Kontakt" data-en="Contact">Kontakt</span>
+      </a>
     </nav>
 
     <div class="sidebar-foot">
       <div class="side-actions">
         <a class="side-btn" href="https://github.com/samankarimi97" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a class="side-btn" href="https://www.linkedin.com/in/samankarimi97/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <button class="side-btn" id="themeButton" type="button" aria-label="Toggle dark mode">Theme</button>
-        <button class="side-btn" id="printButton" type="button">Print</button>
+        <button class="side-btn" id="themeButton" type="button" data-de="Darstellung" data-en="Theme">Darstellung</button>
+        <button class="side-btn" id="printButton" type="button" data-de="Drucken" data-en="Print">Drucken</button>
       </div>
       <p class="side-meta">Portfolio · 2026</p>
     </div>
@@ -439,23 +559,67 @@
 
   <div class="page">
     <main class="content" id="main">
+      <div class="top-language-row">
+        <div class="language-switch" role="group" aria-label="Sprache" data-aria-de="Sprache" data-aria-en="Language">
+          <button class="lang-btn active" id="langDe" type="button">DE</button>
+          <button class="lang-btn" id="langEn" type="button">EN</button>
+        </div>
+      </div>
+
       <section class="section" id="overview">
         <div class="hero">
           <div class="hero-inner">
-            <div class="kicker"><span></span> Engineering project experience with applied AI capability</div>
-            <h1>Turning complex operations into <span class="gradient-text">practical AI and data solutions.</span></h1>
-            <p class="hero-copy">I combine more than three years of residential and commercial construction-project experience with graduate-level work in Artificial Intelligence, Natural Language Processing, Business Intelligence, and digital transformation.</p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="mailto:samankarimi97@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Contact me</a>
-              <a class="btn" href="https://github.com/samankarimi97" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>View GitHub</a>
-              <button class="btn" id="copyEmailButton" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy email</button>
+            <div class="kicker">
+              <span></span>
+              <b data-de="Technische Projekterfahrung mit angewandter KI-Kompetenz"
+                 data-en="Engineering project experience with applied AI capability">
+                Technische Projekterfahrung mit angewandter KI-Kompetenz
+              </b>
             </div>
 
-            <div class="metric-grid" aria-label="Professional highlights">
-              <div class="metric"><strong>3+ years</strong><span>Construction project delivery</span></div>
-              <div class="metric"><strong>3 projects</strong><span>Residential and commercial developments</span></div>
-              <div class="metric"><strong>AI · Data · Operations</strong><span>Cross-functional problem-solving</span></div>
+            <h1>
+              <span data-de="Komplexe Abläufe in " data-en="Turning complex operations into ">Komplexe Abläufe in </span>
+              <span class="gradient-text"
+                    data-de="praktische KI- und Datenlösungen übersetzen."
+                    data-en="practical AI and data solutions.">
+                praktische KI- und Datenlösungen übersetzen.
+              </span>
+            </h1>
+
+            <p class="hero-copy"
+               data-de="Ich verbinde mehr als drei Jahre Erfahrung in der Abwicklung von Wohn- und Gewerbebauprojekten mit fundierten Kenntnissen in Künstlicher Intelligenz, Natural Language Processing, Business Intelligence und digitaler Transformation."
+               data-en="I combine more than three years of residential and commercial construction-project experience with graduate-level work in Artificial Intelligence, Natural Language Processing, Business Intelligence, and digital transformation.">
+              Ich verbinde mehr als drei Jahre Erfahrung in der Abwicklung von Wohn- und Gewerbebauprojekten mit fundierten Kenntnissen in Künstlicher Intelligenz, Natural Language Processing, Business Intelligence und digitaler Transformation.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:samankarimi97@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                <span data-de="Kontakt aufnehmen" data-en="Contact me">Kontakt aufnehmen</span>
+              </a>
+              <a class="btn" href="https://github.com/samankarimi97" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
+                <span data-de="GitHub ansehen" data-en="View GitHub">GitHub ansehen</span>
+              </a>
+              <button class="btn" id="copyEmailButton" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span data-de="E-Mail kopieren" data-en="Copy email">E-Mail kopieren</span>
+              </button>
+            </div>
+
+            <div class="metric-grid" aria-label="Berufliche Eckdaten" data-aria-de="Berufliche Eckdaten" data-aria-en="Professional highlights">
+              <div class="metric">
+                <strong data-de="3+ Jahre" data-en="3+ years">3+ Jahre</strong>
+                <span data-de="Bauprojektabwicklung" data-en="Construction project delivery">Bauprojektabwicklung</span>
+              </div>
+              <div class="metric">
+                <strong data-de="3 Projekte" data-en="3 projects">3 Projekte</strong>
+                <span data-de="Wohn- und Gewerbebau" data-en="Residential and commercial developments">Wohn- und Gewerbebau</span>
+              </div>
+              <div class="metric">
+                <strong>AI · Data · Operations</strong>
+                <span data-de="Interdisziplinäre Problemlösung" data-en="Cross-functional problem-solving">Interdisziplinäre Problemlösung</span>
+              </div>
             </div>
           </div>
         </div>
@@ -463,116 +627,261 @@
 
       <section class="section" id="profile">
         <div class="section-head">
-          <div><div class="section-index">01 · Profile</div><h2>Where engineering experience meets applied AI</h2></div>
-          <p>I understand operational problems from the field and now approach them with data, software, and AI.</p>
+          <div>
+            <div class="section-index" data-de="01 · Profil" data-en="01 · Profile">01 · Profil</div>
+            <h2 data-de="Wo Ingenieurpraxis auf angewandte KI trifft"
+                data-en="Where engineering experience meets applied AI">
+              Wo Ingenieurpraxis auf angewandte KI trifft
+            </h2>
+          </div>
+          <p data-de="Ich kenne operative Probleme aus der Praxis und bearbeite sie heute mit Daten, Software und KI."
+             data-en="I understand operational problems from the field and now approach them with data, software, and AI.">
+            Ich kenne operative Probleme aus der Praxis und bearbeite sie heute mit Daten, Software und KI.
+          </p>
         </div>
 
         <div class="overview-grid">
           <article class="panel about-card">
-            <p>I am completing an M.Sc. in Artificial Intelligence at IU International University of Applied Sciences in Germany. My work focuses on practical ways AI can improve information access, decision-making, process monitoring, and project execution.</p>
-            <p>Before moving into AI, I worked across the lifecycle of residential and commercial construction projects—planning, scheduling, procurement, contractor coordination, site supervision, quality control, budgeting support, and stakeholder communication.</p>
-            <p>This combination positions me for early-career roles where technology must connect with real operations: AI consulting, AI solutions, business intelligence, digital transformation, technical project coordination, and construction technology.</p>
+            <p data-de="Ich absolviere derzeit einen M.Sc. in Artificial Intelligence an der IU International University of Applied Sciences in Deutschland. Mein Schwerpunkt liegt auf praktischen Anwendungen von KI für Informationszugang, Entscheidungsunterstützung, Prozessüberwachung und Projektabwicklung."
+               data-en="I am completing an M.Sc. in Artificial Intelligence at IU International University of Applied Sciences in Germany. My work focuses on practical ways AI can improve information access, decision-making, process monitoring, and project execution.">
+              Ich absolviere derzeit einen M.Sc. in Artificial Intelligence an der IU International University of Applied Sciences in Deutschland. Mein Schwerpunkt liegt auf praktischen Anwendungen von KI für Informationszugang, Entscheidungsunterstützung, Prozessüberwachung und Projektabwicklung.
+            </p>
+            <p data-de="Zuvor war ich über den gesamten Lebenszyklus von Wohn- und Gewerbebauprojekten tätig – von Planung, Terminsteuerung und Beschaffung bis zu Baustellenkoordination, Qualitätskontrolle und Kommunikation mit Projektbeteiligten."
+               data-en="Before moving into AI, I worked across the lifecycle of residential and commercial construction projects—planning, scheduling, procurement, contractor coordination, site supervision, quality control, budgeting support, and stakeholder communication.">
+              Zuvor war ich über den gesamten Lebenszyklus von Wohn- und Gewerbebauprojekten tätig – von Planung, Terminsteuerung und Beschaffung bis zu Baustellenkoordination, Qualitätskontrolle und Kommunikation mit Projektbeteiligten.
+            </p>
+            <p data-de="Diese Kombination ist besonders relevant für Einstiegspositionen, in denen Technologie mit realen Geschäfts- und Betriebsprozessen verbunden werden muss: AI Consulting, Business Intelligence, digitale Transformation, technische Projektkoordination und Construction Technology."
+               data-en="This combination positions me for early-career roles where technology must connect with real operations: AI consulting, AI solutions, business intelligence, digital transformation, technical project coordination, and construction technology.">
+              Diese Kombination ist besonders relevant für Einstiegspositionen, in denen Technologie mit realen Geschäfts- und Betriebsprozessen verbunden werden muss: AI Consulting, Business Intelligence, digitale Transformation, technische Projektkoordination und Construction Technology.
+            </p>
           </article>
 
-          <div class="panel tracks" aria-label="Target contribution areas">
-            <div class="track"><div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 22h4M8.5 14.5A6 6 0 1 1 15.5 14.5C14.7 15.1 14 16 14 17h-4c0-1-.7-1.9-1.5-2.5Z"/></svg></div><div><h3>AI & digital transformation</h3><p>Translate business problems into practical AI use cases, prototypes, and implementation plans.</p></div></div>
-            <div class="track"><div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div><div><h3>BI & operations analysis</h3><p>Structure KPIs, dashboards, alerts, and decision workflows around operational needs.</p></div></div>
-            <div class="track"><div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8l8-4 8 4v12M8 20v-6h8v6M8 10h.01M12 10h.01M16 10h.01"/></svg></div><div><h3>ConTech & BIM + AI</h3><p>Connect construction-domain knowledge with information retrieval, LLMs, and digital project systems.</p></div></div>
+          <div class="panel tracks">
+            <div class="track">
+              <div class="track-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 22h4M8.5 14.5A6 6 0 1 1 15.5 14.5C14.7 15.1 14 16 14 17h-4c0-1-.7-1.9-1.5-2.5Z"/></svg>
+              </div>
+              <div>
+                <h3 data-de="KI & digitale Transformation" data-en="AI & digital transformation">KI & digitale Transformation</h3>
+                <p data-de="Geschäftsprobleme in umsetzbare KI-Anwendungsfälle, Prototypen und Implementierungspläne übersetzen."
+                   data-en="Translate business problems into practical AI use cases, prototypes, and implementation plans.">
+                  Geschäftsprobleme in umsetzbare KI-Anwendungsfälle, Prototypen und Implementierungspläne übersetzen.
+                </p>
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+              </div>
+              <div>
+                <h3 data-de="BI & Operations-Analyse" data-en="BI & operations analysis">BI & Operations-Analyse</h3>
+                <p data-de="KPIs, Dashboards, Warnmeldungen und Entscheidungsabläufe an operativen Anforderungen ausrichten."
+                   data-en="Structure KPIs, dashboards, alerts, and decision workflows around operational needs.">
+                  KPIs, Dashboards, Warnmeldungen und Entscheidungsabläufe an operativen Anforderungen ausrichten.
+                </p>
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8l8-4 8 4v12M8 20v-6h8v6M8 10h.01M12 10h.01M16 10h.01"/></svg>
+              </div>
+              <div>
+                <h3>ConTech & BIM + AI</h3>
+                <p data-de="Baupraxis mit Information Retrieval, LLMs und digitalen Projektsystemen verbinden."
+                   data-en="Connect construction-domain knowledge with information retrieval, LLMs, and digital project systems.">
+                  Baupraxis mit Information Retrieval, LLMs und digitalen Projektsystemen verbinden.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="experience">
         <div class="section-head">
-          <div><div class="section-index">02 · Experience</div><h2>Project delivery under real constraints</h2></div>
-          <p>End-to-end coordination across schedules, procurement, cost, quality, technical teams, suppliers, and owners.</p>
+          <div>
+            <div class="section-index" data-de="02 · Berufserfahrung" data-en="02 · Experience">02 · Berufserfahrung</div>
+            <h2 data-de="Projektabwicklung unter realen Rahmenbedingungen"
+                data-en="Project delivery under real constraints">
+              Projektabwicklung unter realen Rahmenbedingungen
+            </h2>
+          </div>
+          <p data-de="Koordination von Terminplanung, Beschaffung, Kosten, Qualität, Fachgewerken, Lieferanten und Eigentümern."
+             data-en="End-to-end coordination across schedules, procurement, cost, quality, technical teams, suppliers, and owners.">
+            Koordination von Terminplanung, Beschaffung, Kosten, Qualität, Fachgewerken, Lieferanten und Eigentümern.
+          </p>
         </div>
 
         <article class="panel experience-card">
           <div class="role-row">
-            <div><h3>Project Engineer · Project Coordinator</h3><div class="role-company">Tadvin Sazeh Construction Company</div></div>
-            <div class="role-meta">Mar 2020 – Nov 2023<br>Tehran, Iran</div>
+            <div>
+              <h3 data-de="Projektingenieur · Projektkoordinator" data-en="Project Engineer · Project Coordinator">Projektingenieur · Projektkoordinator</h3>
+              <div class="role-company">Tadvin Sazeh Construction Company</div>
+            </div>
+            <div class="role-meta"
+                 data-de="März 2020 – Nov. 2023<br>Teheran, Iran"
+                 data-en="Mar 2020 – Nov 2023<br>Tehran, Iran">
+              März 2020 – Nov. 2023<br>Teheran, Iran
+            </div>
           </div>
 
           <div class="responsibility-grid">
-            <div class="responsibility"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"/></svg></span><span>Built and monitored project schedules with Microsoft Project.</span></div>
-            <div class="responsibility"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"/></svg></span><span>Coordinated structural, architectural, finishing, and MEP activities.</span></div>
-            <div class="responsibility"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"/></svg></span><span>Managed supplier evaluation, purchasing, delivery logistics, and inventory planning.</span></div>
-            <div class="responsibility"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"/></svg></span><span>Reviewed drawings and monitored quality, documentation, cost, and site progress.</span></div>
-            <div class="responsibility"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"/></svg></span><span>Coordinated contractors, consultants, suppliers, engineers, and property owners.</span></div>
-            <div class="responsibility"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="m5 12 4 4L19 6"/></svg></span><span>Supported contract administration, operational expenses, and project records.</span></div>
+            <div class="responsibility"><span class="check">✓</span><span data-de="Projektterminpläne mit Microsoft Project erstellt und überwacht." data-en="Built and monitored project schedules with Microsoft Project.">Projektterminpläne mit Microsoft Project erstellt und überwacht.</span></div>
+            <div class="responsibility"><span class="check">✓</span><span data-de="Rohbau-, Architektur-, Ausbau- und MEP-Aktivitäten koordiniert." data-en="Coordinated structural, architectural, finishing, and MEP activities.">Rohbau-, Architektur-, Ausbau- und MEP-Aktivitäten koordiniert.</span></div>
+            <div class="responsibility"><span class="check">✓</span><span data-de="Lieferantenauswahl, Einkauf, Lieferlogistik und Materialplanung gesteuert." data-en="Managed supplier evaluation, purchasing, delivery logistics, and inventory planning.">Lieferantenauswahl, Einkauf, Lieferlogistik und Materialplanung gesteuert.</span></div>
+            <div class="responsibility"><span class="check">✓</span><span data-de="Pläne geprüft sowie Qualität, Dokumentation, Kosten und Baufortschritt überwacht." data-en="Reviewed drawings and monitored quality, documentation, cost, and site progress.">Pläne geprüft sowie Qualität, Dokumentation, Kosten und Baufortschritt überwacht.</span></div>
+            <div class="responsibility"><span class="check">✓</span><span data-de="Auftragnehmer, Berater, Lieferanten, Ingenieure und Eigentümer abgestimmt." data-en="Coordinated contractors, consultants, suppliers, engineers, and property owners.">Auftragnehmer, Berater, Lieferanten, Ingenieure und Eigentümer abgestimmt.</span></div>
+            <div class="responsibility"><span class="check">✓</span><span data-de="Vertragsabwicklung, Betriebsausgaben und Projektdokumentation unterstützt." data-en="Supported contract administration, operational expenses, and project records.">Vertragsabwicklung, Betriebsausgaben und Projektdokumentation unterstützt.</span></div>
           </div>
 
           <div class="project-scale">
-            <div class="scale-card"><div class="label">Lead operational role</div><h4>Shahreziba Residential</h4><p>20 residential units across seven floors.</p></div>
-            <div class="scale-card"><div class="label">Residential development</div><h4>Yousef Abad Project</h4><p>Construction supervision and multidisciplinary coordination.</p></div>
-            <div class="scale-card"><div class="label">Commercial development</div><h4>Gandi Office Building</h4><p>Project execution, workflow monitoring, and stakeholder coordination.</p></div>
+            <div class="scale-card">
+              <div class="label" data-de="Operative Führungsrolle" data-en="Lead operational role">Operative Führungsrolle</div>
+              <h4>Shahreziba Residential</h4>
+              <p data-de="20 Wohneinheiten auf sieben Geschossen." data-en="20 residential units across seven floors.">20 Wohneinheiten auf sieben Geschossen.</p>
+            </div>
+            <div class="scale-card">
+              <div class="label" data-de="Wohnbauprojekt" data-en="Residential development">Wohnbauprojekt</div>
+              <h4>Yousef Abad Project</h4>
+              <p data-de="Bauüberwachung und fachübergreifende Koordination." data-en="Construction supervision and multidisciplinary coordination.">Bauüberwachung und fachübergreifende Koordination.</p>
+            </div>
+            <div class="scale-card">
+              <div class="label" data-de="Gewerbebauprojekt" data-en="Commercial development">Gewerbebauprojekt</div>
+              <h4>Gandi Office Building</h4>
+              <p data-de="Projektumsetzung, Prozessüberwachung und Stakeholder-Koordination." data-en="Project execution, workflow monitoring, and stakeholder coordination.">Projektumsetzung, Prozessüberwachung und Stakeholder-Koordination.</p>
+            </div>
           </div>
         </article>
 
-        <div class="decision-grid" aria-label="Selected process improvements">
-          <article class="decision-card"><span class="number">01</span><h3>Procurement resilience</h3><p>Maintained progress during severe inflation by continuously comparing suppliers, replacing underperforming vendors, and forecasting material needs.</p></article>
-          <article class="decision-card"><span class="number">02</span><h3>Schedule optimization</h3><p>Introduced overlapping activities where technically feasible while protecting safety and quality requirements.</p></article>
-          <article class="decision-card"><span class="number">03</span><h3>On-site process improvement</h3><p>Accelerated vertical material transport by repurposing the installed elevator motor after structural completion.</p></article>
-          <article class="decision-card"><span class="number">04</span><h3>Quality under pressure</h3><p>Coordinated winter concreting at approximately −9°C using temporary heating and protective enclosures to prevent freezing.</p></article>
+        <div class="decision-grid">
+          <article class="decision-card">
+            <span class="number">01</span>
+            <h3 data-de="Robuste Beschaffung" data-en="Procurement resilience">Robuste Beschaffung</h3>
+            <p data-de="Den Projektfortschritt trotz starker Inflation durch laufende Lieferantenvergleiche, den Austausch unzuverlässiger Anbieter und vorausschauende Materialplanung gesichert."
+               data-en="Maintained progress during severe inflation by continuously comparing suppliers, replacing underperforming vendors, and forecasting material needs.">
+              Den Projektfortschritt trotz starker Inflation durch laufende Lieferantenvergleiche, den Austausch unzuverlässiger Anbieter und vorausschauende Materialplanung gesichert.
+            </p>
+          </article>
+          <article class="decision-card">
+            <span class="number">02</span>
+            <h3 data-de="Terminoptimierung" data-en="Schedule optimization">Terminoptimierung</h3>
+            <p data-de="Wo technisch möglich, parallele Arbeitsschritte eingeführt, ohne Sicherheits- oder Qualitätsanforderungen zu beeinträchtigen."
+               data-en="Introduced overlapping activities where technically feasible while protecting safety and quality requirements.">
+              Wo technisch möglich, parallele Arbeitsschritte eingeführt, ohne Sicherheits- oder Qualitätsanforderungen zu beeinträchtigen.
+            </p>
+          </article>
+          <article class="decision-card">
+            <span class="number">03</span>
+            <h3 data-de="Prozessverbesserung auf der Baustelle" data-en="On-site process improvement">Prozessverbesserung auf der Baustelle</h3>
+            <p data-de="Den Materialtransport beschleunigt, indem der installierte Aufzugsmotor nach Abschluss des Rohbaus für den vertikalen Transport genutzt wurde."
+               data-en="Accelerated vertical material transport by repurposing the installed elevator motor after structural completion.">
+              Den Materialtransport beschleunigt, indem der installierte Aufzugsmotor nach Abschluss des Rohbaus für den vertikalen Transport genutzt wurde.
+            </p>
+          </article>
+          <article class="decision-card">
+            <span class="number">04</span>
+            <h3 data-de="Qualität unter Zeitdruck" data-en="Quality under pressure">Qualität unter Zeitdruck</h3>
+            <p data-de="Winterbetonage bei etwa −9 °C mit temporärer Beheizung und Schutzmaßnahmen koordiniert, um ein Gefrieren des Betons zu verhindern."
+               data-en="Coordinated winter concreting at approximately −9°C using temporary heating and protective enclosures to prevent freezing.">
+              Winterbetonage bei etwa −9 °C mit temporärer Beheizung und Schutzmaßnahmen koordiniert, um ein Gefrieren des Betons zu verhindern.
+            </p>
+          </article>
         </div>
       </section>
 
       <section class="section" id="projects">
         <div class="section-head">
-          <div><div class="section-index">03 · Projects</div><h2>Built, designed, and researched</h2></div>
-          <p>Focused evidence portfolio</p>
+          <div>
+            <div class="section-index" data-de="03 · Projekte" data-en="03 · Projects">03 · Projekte</div>
+            <h2 data-de="Entwickelt, konzipiert und untersucht"
+                data-en="Built, designed, and researched">
+              Entwickelt, konzipiert und untersucht
+            </h2>
+          </div>
+          <p data-de="Ein fokussiertes Kompetenzportfolio – keine reine Liste von Studienmodulen."
+             data-en="A focused evidence portfolio—not a list of course names.">
+            Ein fokussiertes Kompetenzportfolio – keine reine Liste von Studienmodulen.
+          </p>
         </div>
 
-        <div class="project-controls" role="group" aria-label="Filter projects">
-          <button class="filter-btn active" type="button" data-filter="all">All</button>
-          <button class="filter-btn" type="button" data-filter="built">Built</button>
-          <button class="filter-btn" type="button" data-filter="designed">Designed</button>
-          <button class="filter-btn" type="button" data-filter="researched">Researched</button>
+        <div class="project-controls" role="group" aria-label="Projektfilter" data-aria-de="Projektfilter" data-aria-en="Project filters">
+          <button class="filter-btn active" type="button" data-filter="all" data-de="Alle" data-en="All">Alle</button>
+          <button class="filter-btn" type="button" data-filter="built" data-de="Umgesetzt" data-en="Built">Umgesetzt</button>
+          <button class="filter-btn" type="button" data-filter="designed" data-de="Konzipiert" data-en="Designed">Konzipiert</button>
+          <button class="filter-btn" type="button" data-filter="researched" data-de="Untersucht" data-en="Researched">Untersucht</button>
         </div>
 
         <div class="projects-grid">
           <article class="project-card" data-category="built">
-            <div class="project-type">Built · Public repository</div>
+            <div class="project-type" data-de="Umgesetzt · Öffentliches Repository" data-en="Built · Public repository">Umgesetzt · Öffentliches Repository</div>
             <h3>AI Weather Assistant</h3>
-            <p>A Streamlit application that interprets natural-language weather questions, extracts locations through spaCy Named Entity Recognition, and retrieves live weather data through a REST API.</p>
+            <p data-de="Eine Streamlit-Anwendung, die natürlichsprachliche Wetterfragen interpretiert, Ortsnamen mit spaCy Named Entity Recognition extrahiert und aktuelle Wetterdaten über eine REST API abruft."
+               data-en="A Streamlit application that interprets natural-language weather questions, extracts locations through spaCy Named Entity Recognition, and retrieves live weather data through a REST API.">
+              Eine Streamlit-Anwendung, die natürlichsprachliche Wetterfragen interpretiert, Ortsnamen mit spaCy Named Entity Recognition extrahiert und aktuelle Wetterdaten über eine REST API abruft.
+            </p>
             <div class="tag-row"><span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">NER</span><span class="tag">Streamlit</span><span class="tag">OpenWeatherMap</span></div>
-            <a class="project-link" href="https://github.com/samankarimi97/weather-chatbot" target="_blank" rel="noopener noreferrer">View repository<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+            <a class="project-link" href="https://github.com/samankarimi97/weather-chatbot" target="_blank" rel="noopener noreferrer">
+              <span data-de="Repository ansehen" data-en="View repository">Repository ansehen</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
           </article>
 
           <article class="project-card" data-category="built">
-            <div class="project-type">Built · Academic repository</div>
+            <div class="project-type" data-de="Umgesetzt · Öffentliches Repository" data-en="Built · Public repository">Umgesetzt · Öffentliches Repository</div>
             <h3>Ideal Function Selection & Test Data Mapping</h3>
-            <p>An object-oriented Python workflow for least-squares function selection, threshold-based test-data mapping, SQLite persistence, visualization, and unit testing.</p>
+            <p data-de="Ein objektorientierter Python-Workflow für Funktionsauswahl nach der Methode der kleinsten Quadrate, schwellenwertbasierte Zuordnung von Testdaten, SQLite-Persistenz, Visualisierung und Unit Tests."
+               data-en="An object-oriented Python workflow for least-squares function selection, threshold-based test-data mapping, SQLite persistence, visualization, and unit testing.">
+              Ein objektorientierter Python-Workflow für Funktionsauswahl nach der Methode der kleinsten Quadrate, schwellenwertbasierte Zuordnung von Testdaten, SQLite-Persistenz, Visualisierung und Unit Tests.
+            </p>
             <div class="tag-row"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">SQLAlchemy</span><span class="tag">Bokeh</span><span class="tag">unittest</span></div>
-            <a class="project-link" href="https://github.com/samankarimi97/Programming-with-Python-" target="_blank" rel="noopener noreferrer">View repository<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+            <a class="project-link" href="https://github.com/samankarimi97/Programming-with-Python-" target="_blank" rel="noopener noreferrer">
+              <span data-de="Repository ansehen" data-en="View repository">Repository ansehen</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
           </article>
 
           <article class="project-card" data-category="designed">
-            <div class="project-type">Designed · BI case study</div>
-            <h3>ML Replenishment Monitoring Dashboard</h3>
-            <p>Designed an expert monitoring workflow for a machine-learning replenishment system covering 100 stores in 10 countries, including KPIs, drill-downs, alerts, trends, stock-outs, delays, and waste anomalies.</p>
+            <div class="project-type" data-de="Konzipiert · BI-Fallstudie" data-en="Designed · BI case study">Konzipiert · BI-Fallstudie</div>
+            <h3 data-de="Monitoring-Dashboard für ML-basierte Bestandsplanung"
+                data-en="ML Replenishment Monitoring Dashboard">
+              Monitoring-Dashboard für ML-basierte Bestandsplanung
+            </h3>
+            <p data-de="Konzeption eines Monitoring-Workflows für ein ML-basiertes Bestandsauffüllungssystem für 100 Filialen in 10 Ländern – mit KPIs, Drill-downs, Warnmeldungen, Trendanalysen sowie der Erkennung von Lieferverzögerungen, Fehlbeständen und Verschwendung."
+               data-en="Designed an expert monitoring workflow for a machine-learning replenishment system covering 100 stores in 10 countries, including KPIs, drill-downs, alerts, trends, stock-outs, delays, and waste anomalies.">
+              Konzeption eines Monitoring-Workflows für ein ML-basiertes Bestandsauffüllungssystem für 100 Filialen in 10 Ländern – mit KPIs, Drill-downs, Warnmeldungen, Trendanalysen sowie der Erkennung von Lieferverzögerungen, Fehlbeständen und Verschwendung.
+            </p>
             <div class="tag-row"><span class="tag">Business Intelligence</span><span class="tag">KPI Design</span><span class="tag">MLOps Concepts</span><span class="tag">Decision Support</span></div>
           </article>
 
           <article class="project-card" data-category="designed">
-            <div class="project-type">Designed · Project planning case study</div>
-            <h3>AI Weather Application Project Plan</h3>
-            <p>Architected a seven-month delivery plan for an AI-enhanced application, including a WBS, Gantt schedule, MoSCoW prioritization, stakeholder mapping, risk matrix, and cost planning for a four-person agile team.</p>
+            <div class="project-type" data-de="Konzipiert · Projektplanungs-Fallstudie" data-en="Designed · Project planning case study">Konzipiert · Projektplanungs-Fallstudie</div>
+            <h3 data-de="Projektplan für eine KI-Wetteranwendung" data-en="AI Weather Application Project Plan">Projektplan für eine KI-Wetteranwendung</h3>
+            <p data-de="Ausarbeitung eines siebenmonatigen Projektplans mit WBS, Gantt-Terminplan, MoSCoW-Priorisierung, Stakeholder-Mapping, Risikomatrix und Kostenplanung für ein vierköpfiges agiles Team."
+               data-en="Architected a seven-month delivery plan for an AI-enhanced application, including a WBS, Gantt schedule, MoSCoW prioritization, stakeholder mapping, risk matrix, and cost planning for a four-person agile team.">
+              Ausarbeitung eines siebenmonatigen Projektplans mit WBS, Gantt-Terminplan, MoSCoW-Priorisierung, Stakeholder-Mapping, Risikomatrix und Kostenplanung für ein vierköpfiges agiles Team.
+            </p>
             <div class="tag-row"><span class="tag">WBS</span><span class="tag">Scheduling</span><span class="tag">Risk Management</span><span class="tag">Stakeholders</span><span class="tag">Cost Planning</span></div>
           </article>
 
           <article class="project-card" data-category="researched">
-            <div class="project-type">Researched · Responsible AI</div>
-            <h3>Generative AI in Medical Environments</h3>
-            <p>Evaluated LLM applications in clinical documentation, medical coding, education, and drug discovery, alongside privacy, hallucination, explainability, bias, and regulatory risks.</p>
+            <div class="project-type" data-de="Untersucht · Responsible AI" data-en="Researched · Responsible AI">Untersucht · Responsible AI</div>
+            <h3 data-de="Generative KI in medizinischen Umgebungen" data-en="Generative AI in Medical Environments">Generative KI in medizinischen Umgebungen</h3>
+            <p data-de="Bewertung von LLM-Anwendungen in klinischer Dokumentation, medizinischer Kodierung, Ausbildung und Wirkstoffforschung sowie Analyse von Datenschutz, Halluzinationen, Erklärbarkeit, Bias und regulatorischen Risiken."
+               data-en="Evaluated LLM applications in clinical documentation, medical coding, education, and drug discovery, alongside privacy, hallucination, explainability, bias, and regulatory risks.">
+              Bewertung von LLM-Anwendungen in klinischer Dokumentation, medizinischer Kodierung, Ausbildung und Wirkstoffforschung sowie Analyse von Datenschutz, Halluzinationen, Erklärbarkeit, Bias und regulatorischen Risiken.
+            </p>
             <div class="tag-row"><span class="tag">LLMs</span><span class="tag">Medical NLP</span><span class="tag">Explainable AI</span><span class="tag">Privacy</span><span class="tag">EU AI Act</span></div>
           </article>
 
           <article class="project-card" data-category="researched">
-            <div class="project-type">Researched · Computer vision</div>
-            <h3>Computer Vision for Autonomous Driving</h3>
-            <p>Compared modern approaches including CNNs, Vision Transformers, sensor fusion, SLAM, NeRF, self-supervised learning, and end-to-end autonomous-driving architectures.</p>
+            <div class="project-type" data-de="Untersucht · Computer Vision" data-en="Researched · Computer vision">Untersucht · Computer Vision</div>
+            <h3 data-de="Computer Vision für autonomes Fahren" data-en="Computer Vision for Autonomous Driving">Computer Vision für autonomes Fahren</h3>
+            <p data-de="Vergleich moderner Ansätze wie CNNs, Vision Transformers, Sensor Fusion, SLAM, NeRF, Self-Supervised Learning und End-to-End-Architekturen für autonomes Fahren."
+               data-en="Compared modern approaches including CNNs, Vision Transformers, sensor fusion, SLAM, NeRF, self-supervised learning, and end-to-end autonomous-driving architectures.">
+              Vergleich moderner Ansätze wie CNNs, Vision Transformers, Sensor Fusion, SLAM, NeRF, Self-Supervised Learning und End-to-End-Architekturen für autonomes Fahren.
+            </p>
             <div class="tag-row"><span class="tag">Computer Vision</span><span class="tag">CNN</span><span class="tag">ViT</span><span class="tag">SLAM</span><span class="tag">Sensor Fusion</span></div>
           </article>
         </div>
@@ -580,22 +889,37 @@
 
       <section class="section" id="thesis">
         <div class="section-head">
-          <div><div class="section-index">04 · Thesis</div><h2>Research at the AI × construction intersection</h2></div>
-          <p>Ongoing master's research connecting LLMs, information retrieval, decision support, BIM, and AEC digital transformation.</p>
+          <div>
+            <div class="section-index" data-de="04 · Masterarbeit" data-en="04 · Thesis">04 · Masterarbeit</div>
+            <h2 data-de="Forschung an der Schnittstelle von KI und Bauwesen"
+                data-en="Research at the AI × construction intersection">
+              Forschung an der Schnittstelle von KI und Bauwesen
+            </h2>
+          </div>
+          <p data-de="Laufende Forschung zu LLMs, Information Retrieval, Entscheidungsunterstützung, BIM und digitaler Transformation im AEC-Sektor."
+             data-en="Ongoing master's research connecting LLMs, information retrieval, decision support, BIM, and AEC digital transformation.">
+            Laufende Forschung zu LLMs, Information Retrieval, Entscheidungsunterstützung, BIM und digitaler Transformation im AEC-Sektor.
+          </p>
         </div>
 
         <article class="panel thesis">
           <div class="thesis-content">
-            <div class="project-type">In progress · Master's thesis</div>
-            <h3>Large Language Models for Information Access in Building Information Modeling: Applications, Challenges, and Future Research Directions</h3>
-            <p>A structured literature review examining how LLMs can improve information access, knowledge retrieval, question answering, and decision support within BIM environments. The work evaluates current applications, technical limitations, research gaps, and future directions for AI-assisted construction information systems.</p>
+            <div class="project-type" data-de="In Bearbeitung · Masterarbeit" data-en="In progress · Master's thesis">In Bearbeitung · Masterarbeit</div>
+            <h3 data-de="Large Language Models für den Informationszugang in Building Information Modeling: Anwendungen, Herausforderungen und zukünftige Forschungsrichtungen"
+                data-en="Large Language Models for Information Access in Building Information Modeling: Applications, Challenges, and Future Research Directions">
+              Large Language Models für den Informationszugang in Building Information Modeling: Anwendungen, Herausforderungen und zukünftige Forschungsrichtungen
+            </h3>
+            <p data-de="Eine strukturierte Literaturstudie dazu, wie LLMs den Informationszugang, die Wissensabfrage, das Question Answering und die Entscheidungsunterstützung in BIM-Umgebungen verbessern können. Untersucht werden bestehende Anwendungen, technische Grenzen, Forschungslücken und zukünftige Entwicklungen KI-gestützter Informationssysteme im Bauwesen."
+               data-en="A structured literature review examining how LLMs can improve information access, knowledge retrieval, question answering, and decision support within BIM environments. The work evaluates current applications, technical limitations, research gaps, and future directions for AI-assisted construction information systems.">
+              Eine strukturierte Literaturstudie dazu, wie LLMs den Informationszugang, die Wissensabfrage, das Question Answering und die Entscheidungsunterstützung in BIM-Umgebungen verbessern können. Untersucht werden bestehende Anwendungen, technische Grenzen, Forschungslücken und zukünftige Entwicklungen KI-gestützter Informationssysteme im Bauwesen.
+            </p>
             <div class="thesis-list">
               <div class="thesis-item">Retrieval-Augmented Generation</div>
-              <div class="thesis-item">Semantic search</div>
-              <div class="thesis-item">Knowledge graphs</div>
-              <div class="thesis-item">Information retrieval</div>
-              <div class="thesis-item">Research taxonomy</div>
-              <div class="thesis-item">AEC decision support</div>
+              <div class="thesis-item">Semantic Search</div>
+              <div class="thesis-item">Knowledge Graphs</div>
+              <div class="thesis-item">Information Retrieval</div>
+              <div class="thesis-item" data-de="Forschungstaxonomie" data-en="Research taxonomy">Forschungstaxonomie</div>
+              <div class="thesis-item" data-de="AEC-Entscheidungsunterstützung" data-en="AEC decision support">AEC-Entscheidungsunterstützung</div>
             </div>
           </div>
         </article>
@@ -603,56 +927,190 @@
 
       <section class="section" id="skills">
         <div class="section-head">
-          <div><div class="section-index">05 · Skills & Evidence</div><h2>Skills tied to actual evidence</h2></div>
-          <p>No self-scored percentages. Each capability is connected to work, coursework, research, or a delivered project.</p>
+          <div>
+            <div class="section-index" data-de="05 · Kompetenzen & Nachweise" data-en="05 · Skills & Evidence">05 · Kompetenzen & Nachweise</div>
+            <h2 data-de="Kompetenzen mit konkreten Nachweisen"
+                data-en="Skills tied to actual evidence">
+              Kompetenzen mit konkreten Nachweisen
+            </h2>
+          </div>
+          <p data-de="Keine selbst vergebenen Prozentwerte. Jede Kompetenz ist mit Berufserfahrung, Projekten, Forschung oder Studienleistungen verknüpft."
+             data-en="No self-scored percentages. Each capability is connected to work, coursework, research, or a delivered project.">
+            Keine selbst vergebenen Prozentwerte. Jede Kompetenz ist mit Berufserfahrung, Projekten, Forschung oder Studienleistungen verknüpft.
+          </p>
         </div>
 
         <div class="skills-layout">
-          <div class="panel skill-nav" role="tablist" aria-label="Skill groups">
-            <button class="skill-tab active" type="button" role="tab" aria-selected="true" data-skill="ai"><span>AI & NLP</span><span>01</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="data"><span>Data & BI</span><span>02</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="software"><span>Software</span><span>03</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="pm"><span>Project Delivery</span><span>04</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="research"><span>Research</span><span>05</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill="domain"><span>AEC Domain</span><span>06</span></button>
+          <div class="panel skill-nav" role="tablist">
+            <button class="skill-tab active" type="button" data-skill="ai"><span data-de="KI & NLP" data-en="AI & NLP">KI & NLP</span><span>01</span></button>
+            <button class="skill-tab" type="button" data-skill="data"><span data-de="Daten & BI" data-en="Data & BI">Daten & BI</span><span>02</span></button>
+            <button class="skill-tab" type="button" data-skill="software"><span data-de="Software" data-en="Software">Software</span><span>03</span></button>
+            <button class="skill-tab" type="button" data-skill="pm"><span data-de="Projektabwicklung" data-en="Project Delivery">Projektabwicklung</span><span>04</span></button>
+            <button class="skill-tab" type="button" data-skill="research"><span data-de="Forschung" data-en="Research">Forschung</span><span>05</span></button>
+            <button class="skill-tab" type="button" data-skill="domain"><span data-de="AEC-Domäne" data-en="AEC Domain">AEC-Domäne</span><span>06</span></button>
           </div>
 
           <div class="panel skill-detail">
-            <div class="skill-panel active" id="skill-ai"><h3>Artificial Intelligence & Natural Language Processing</h3><p>Machine learning foundations, LLMs, NLP, Named Entity Recognition, information extraction, deep learning, computer vision, and responsible AI.</p><div class="evidence-list"><div class="evidence">Built a spaCy-based NER layer for the Weather Assistant.</div><div class="evidence">Conducted Medical NLP and LLM research covering real applications and deployment risks.</div><div class="evidence">Studied deep learning generalization, reinforcement learning, and autonomous-driving computer vision.</div><div class="evidence">Researching LLM-assisted information retrieval and decision support for BIM.</div></div></div>
-            <div class="skill-panel" id="skill-data"><h3>Data Analysis, Statistics & Business Intelligence</h3><p>pandas, NumPy, data visualization, Bayesian statistics, causal inference, KPI design, dashboard design, and decision support.</p><div class="evidence-list"><div class="evidence">Designed a monitoring dashboard for an ML-based inventory replenishment system.</div><div class="evidence">Completed advanced work in Bayesian inference, probability, regression, MLE, and causal reasoning.</div><div class="evidence">Used data structures, least-squares selection, and visualizations in the ideal-function project.</div><div class="evidence">Connected operational metrics with alerting and drill-down workflows.</div></div></div>
-            <div class="skill-panel" id="skill-software"><h3>Python & Software Prototyping</h3><p>Python, object-oriented programming, pandas, NumPy, Streamlit, REST API integration, SQL basics, SQLite, SQLAlchemy, Git, GitHub, debugging, and documentation.</p><div class="evidence-list"><div class="evidence">Delivered an interactive Python/Streamlit application using an external weather API.</div><div class="evidence">Developed object-oriented components for database management, function selection, data mapping, and visualization.</div><div class="evidence">Added unit tests and documented a reproducible project workflow.</div><div class="evidence">Maintains public GitHub repositories for selected portfolio projects.</div></div></div>
-            <div class="skill-panel" id="skill-pm"><h3>Project, Operations & Process Management</h3><p>Planning, scheduling, procurement, vendor management, stakeholder coordination, risk management, budget monitoring, inventory planning, and process optimization.</p><div class="evidence-list"><div class="evidence">Contributed to the end-to-end delivery of three construction developments.</div><div class="evidence">Managed schedules, supplier comparisons, logistics, inventory, contractors, and daily operations.</div><div class="evidence">Created a complete AI software-project plan with WBS, Gantt chart, budget, risks, and stakeholder analysis.</div><div class="evidence">Developed an agile transformation roadmap based on Scrum adoption.</div></div></div>
-            <div class="skill-panel" id="skill-research"><h3>Research & Technical Communication</h3><p>Literature review, comparative analysis, critical evaluation, technical writing, scientific presentation, research synthesis, and gap identification.</p><div class="evidence-list"><div class="evidence">Produced research across LLMs, medical AI, responsible AI, deep learning, robotics, and computer vision.</div><div class="evidence">Evaluated technical approaches alongside operational, ethical, privacy, and regulatory constraints.</div><div class="evidence">Uses structured evidence synthesis in the ongoing BIM + LLM thesis.</div><div class="evidence">Communicates complex technical content through reports, presentations, and visual frameworks.</div></div></div>
-            <div class="skill-panel" id="skill-domain"><h3>Construction Engineering & AEC</h3><p>Construction supervision, scheduling, procurement, structural and architectural drawings, MEP coordination, quality control, cost monitoring, and material planning.</p><div class="evidence-list"><div class="evidence">Worked across residential and commercial developments from planning to handover.</div><div class="evidence">Coordinated contractors, consultants, suppliers, engineers, and property owners.</div><div class="evidence">Managed procurement resilience, winter concreting, logistics, and site-level process improvements.</div><div class="evidence">Extending this domain knowledge into BIM, construction informatics, and AI-assisted decision support.</div></div></div>
+            <div class="skill-panel active" id="skill-ai">
+              <h3 data-de="Künstliche Intelligenz & Natural Language Processing" data-en="Artificial Intelligence & Natural Language Processing">Künstliche Intelligenz & Natural Language Processing</h3>
+              <p data-de="Grundlagen des Machine Learning, LLMs, NLP, Named Entity Recognition, Information Extraction, Deep Learning, Computer Vision und Responsible AI."
+                 data-en="Machine learning foundations, LLMs, NLP, Named Entity Recognition, information extraction, deep learning, computer vision, and responsible AI.">
+                Grundlagen des Machine Learning, LLMs, NLP, Named Entity Recognition, Information Extraction, Deep Learning, Computer Vision und Responsible AI.
+              </p>
+              <div class="evidence-list">
+                <div class="evidence" data-de="spaCy-basierte NER-Komponente für den Weather Assistant entwickelt." data-en="Built a spaCy-based NER layer for the Weather Assistant.">spaCy-basierte NER-Komponente für den Weather Assistant entwickelt.</div>
+                <div class="evidence" data-de="Medical-NLP- und LLM-Recherche zu Anwendungen und Einführungsrisiken durchgeführt." data-en="Conducted Medical NLP and LLM research covering real applications and deployment risks.">Medical-NLP- und LLM-Recherche zu Anwendungen und Einführungsrisiken durchgeführt.</div>
+                <div class="evidence" data-de="Deep-Learning-Generalization, Reinforcement Learning und Computer Vision für autonomes Fahren untersucht." data-en="Studied deep learning generalization, reinforcement learning, and autonomous-driving computer vision.">Deep-Learning-Generalization, Reinforcement Learning und Computer Vision für autonomes Fahren untersucht.</div>
+                <div class="evidence" data-de="LLM-gestützten Informationszugang und Entscheidungsunterstützung für BIM erforscht." data-en="Researching LLM-assisted information retrieval and decision support for BIM.">LLM-gestützten Informationszugang und Entscheidungsunterstützung für BIM erforscht.</div>
+              </div>
+            </div>
+
+            <div class="skill-panel" id="skill-data">
+              <h3 data-de="Datenanalyse, Statistik & Business Intelligence" data-en="Data Analysis, Statistics & Business Intelligence">Datenanalyse, Statistik & Business Intelligence</h3>
+              <p data-de="pandas, NumPy, Datenvisualisierung, Bayes-Statistik, Kausalinferenz, KPI-Definition, Dashboard-Konzeption und Entscheidungsunterstützung."
+                 data-en="pandas, NumPy, data visualization, Bayesian statistics, causal inference, KPI design, dashboard design, and decision support.">
+                pandas, NumPy, Datenvisualisierung, Bayes-Statistik, Kausalinferenz, KPI-Definition, Dashboard-Konzeption und Entscheidungsunterstützung.
+              </p>
+              <div class="evidence-list">
+                <div class="evidence" data-de="Monitoring-Dashboard für ein ML-basiertes Bestandsauffüllungssystem konzipiert." data-en="Designed a monitoring dashboard for an ML-based inventory replenishment system.">Monitoring-Dashboard für ein ML-basiertes Bestandsauffüllungssystem konzipiert.</div>
+                <div class="evidence" data-de="Fortgeschrittene Aufgaben zu Bayesian Inference, Wahrscheinlichkeit, Regression, MLE und Kausalität bearbeitet." data-en="Completed advanced work in Bayesian inference, probability, regression, MLE, and causal reasoning.">Fortgeschrittene Aufgaben zu Bayesian Inference, Wahrscheinlichkeit, Regression, MLE und Kausalität bearbeitet.</div>
+                <div class="evidence" data-de="Datenstrukturen, Least-Squares-Auswahl und Visualisierungen im Ideal-Function-Projekt eingesetzt." data-en="Used data structures, least-squares selection, and visualizations in the ideal-function project.">Datenstrukturen, Least-Squares-Auswahl und Visualisierungen im Ideal-Function-Projekt eingesetzt.</div>
+                <div class="evidence" data-de="Operative Kennzahlen mit Warnmeldungen und Drill-down-Workflows verbunden." data-en="Connected operational metrics with alerting and drill-down workflows.">Operative Kennzahlen mit Warnmeldungen und Drill-down-Workflows verbunden.</div>
+              </div>
+            </div>
+
+            <div class="skill-panel" id="skill-software">
+              <h3 data-de="Python & Software-Prototyping" data-en="Python & Software Prototyping">Python & Software-Prototyping</h3>
+              <p data-de="Python, objektorientierte Programmierung, pandas, NumPy, Streamlit, REST-API-Integration, SQL-Grundlagen, SQLite, SQLAlchemy, Git, GitHub, Debugging und Dokumentation."
+                 data-en="Python, object-oriented programming, pandas, NumPy, Streamlit, REST API integration, SQL basics, SQLite, SQLAlchemy, Git, GitHub, debugging, and documentation.">
+                Python, objektorientierte Programmierung, pandas, NumPy, Streamlit, REST-API-Integration, SQL-Grundlagen, SQLite, SQLAlchemy, Git, GitHub, Debugging und Dokumentation.
+              </p>
+              <div class="evidence-list">
+                <div class="evidence" data-de="Interaktive Python-/Streamlit-Anwendung mit externer Wetter-API umgesetzt." data-en="Delivered an interactive Python/Streamlit application using an external weather API.">Interaktive Python-/Streamlit-Anwendung mit externer Wetter-API umgesetzt.</div>
+                <div class="evidence" data-de="Objektorientierte Komponenten für Datenbank, Funktionsauswahl, Datenzuordnung und Visualisierung entwickelt." data-en="Developed object-oriented components for database management, function selection, data mapping, and visualization.">Objektorientierte Komponenten für Datenbank, Funktionsauswahl, Datenzuordnung und Visualisierung entwickelt.</div>
+                <div class="evidence" data-de="Unit Tests ergänzt und einen reproduzierbaren Projektablauf dokumentiert." data-en="Added unit tests and documented a reproducible project workflow.">Unit Tests ergänzt und einen reproduzierbaren Projektablauf dokumentiert.</div>
+                <div class="evidence" data-de="Ausgewählte Projekte in öffentlichen GitHub-Repositories dokumentiert." data-en="Maintains public GitHub repositories for selected portfolio projects.">Ausgewählte Projekte in öffentlichen GitHub-Repositories dokumentiert.</div>
+              </div>
+            </div>
+
+            <div class="skill-panel" id="skill-pm">
+              <h3 data-de="Projekt-, Operations- & Prozessmanagement" data-en="Project, Operations & Process Management">Projekt-, Operations- & Prozessmanagement</h3>
+              <p data-de="Planung, Terminsteuerung, Beschaffung, Lieferantenmanagement, Stakeholder-Koordination, Risikomanagement, Budgetüberwachung, Materialplanung und Prozessoptimierung."
+                 data-en="Planning, scheduling, procurement, vendor management, stakeholder coordination, risk management, budget monitoring, inventory planning, and process optimization.">
+                Planung, Terminsteuerung, Beschaffung, Lieferantenmanagement, Stakeholder-Koordination, Risikomanagement, Budgetüberwachung, Materialplanung und Prozessoptimierung.
+              </p>
+              <div class="evidence-list">
+                <div class="evidence" data-de="An der vollständigen Abwicklung von drei Bauprojekten mitgewirkt." data-en="Contributed to the end-to-end delivery of three construction developments.">An der vollständigen Abwicklung von drei Bauprojekten mitgewirkt.</div>
+                <div class="evidence" data-de="Terminpläne, Lieferantenvergleiche, Logistik, Materialbestände, Auftragnehmer und Tagesbetrieb koordiniert." data-en="Managed schedules, supplier comparisons, logistics, inventory, contractors, and daily operations.">Terminpläne, Lieferantenvergleiche, Logistik, Materialbestände, Auftragnehmer und Tagesbetrieb koordiniert.</div>
+                <div class="evidence" data-de="Vollständigen Projektplan für eine KI-Anwendung mit WBS, Gantt, Budget, Risiken und Stakeholder-Analyse erstellt." data-en="Created a complete AI software-project plan with WBS, Gantt chart, budget, risks, and stakeholder analysis.">Vollständigen Projektplan für eine KI-Anwendung mit WBS, Gantt, Budget, Risiken und Stakeholder-Analyse erstellt.</div>
+                <div class="evidence" data-de="Agile Transformations-Roadmap auf Basis der Scrum-Einführung entwickelt." data-en="Developed an agile transformation roadmap based on Scrum adoption.">Agile Transformations-Roadmap auf Basis der Scrum-Einführung entwickelt.</div>
+              </div>
+            </div>
+
+            <div class="skill-panel" id="skill-research">
+              <h3 data-de="Forschung & technische Kommunikation" data-en="Research & Technical Communication">Forschung & technische Kommunikation</h3>
+              <p data-de="Literaturrecherche, vergleichende Analyse, kritische Bewertung, technisches Schreiben, wissenschaftliche Präsentation, Forschungssynthese und Identifikation von Forschungslücken."
+                 data-en="Literature review, comparative analysis, critical evaluation, technical writing, scientific presentation, research synthesis, and gap identification.">
+                Literaturrecherche, vergleichende Analyse, kritische Bewertung, technisches Schreiben, wissenschaftliche Präsentation, Forschungssynthese und Identifikation von Forschungslücken.
+              </p>
+              <div class="evidence-list">
+                <div class="evidence" data-de="Forschungsarbeiten zu LLMs, Medical AI, Responsible AI, Deep Learning, Robotik und Computer Vision erstellt." data-en="Produced research across LLMs, medical AI, responsible AI, deep learning, robotics, and computer vision.">Forschungsarbeiten zu LLMs, Medical AI, Responsible AI, Deep Learning, Robotik und Computer Vision erstellt.</div>
+                <div class="evidence" data-de="Technische Ansätze zusammen mit operativen, ethischen, datenschutzrechtlichen und regulatorischen Rahmenbedingungen bewertet." data-en="Evaluated technical approaches alongside operational, ethical, privacy, and regulatory constraints.">Technische Ansätze zusammen mit operativen, ethischen, datenschutzrechtlichen und regulatorischen Rahmenbedingungen bewertet.</div>
+                <div class="evidence" data-de="Strukturierte Evidenzsynthese in der laufenden BIM-und-LLM-Masterarbeit eingesetzt." data-en="Uses structured evidence synthesis in the ongoing BIM + LLM thesis.">Strukturierte Evidenzsynthese in der laufenden BIM-und-LLM-Masterarbeit eingesetzt.</div>
+                <div class="evidence" data-de="Komplexe technische Inhalte durch Berichte, Präsentationen und visuelle Frameworks vermittelt." data-en="Communicates complex technical content through reports, presentations, and visual frameworks.">Komplexe technische Inhalte durch Berichte, Präsentationen und visuelle Frameworks vermittelt.</div>
+              </div>
+            </div>
+
+            <div class="skill-panel" id="skill-domain">
+              <h3 data-de="Bauingenieurwesen & AEC" data-en="Construction Engineering & AEC">Bauingenieurwesen & AEC</h3>
+              <p data-de="Bauüberwachung, Terminplanung, Beschaffung, Planprüfung, MEP-Koordination, Qualitätskontrolle, Kostenüberwachung und Materialplanung."
+                 data-en="Construction supervision, scheduling, procurement, structural and architectural drawings, MEP coordination, quality control, cost monitoring, and material planning.">
+                Bauüberwachung, Terminplanung, Beschaffung, Planprüfung, MEP-Koordination, Qualitätskontrolle, Kostenüberwachung und Materialplanung.
+              </p>
+              <div class="evidence-list">
+                <div class="evidence" data-de="Wohn- und Gewerbebauprojekte von der Planung bis zur Übergabe begleitet." data-en="Worked across residential and commercial developments from planning to handover.">Wohn- und Gewerbebauprojekte von der Planung bis zur Übergabe begleitet.</div>
+                <div class="evidence" data-de="Auftragnehmer, Berater, Lieferanten, Ingenieure und Eigentümer koordiniert." data-en="Coordinated contractors, consultants, suppliers, engineers, and property owners.">Auftragnehmer, Berater, Lieferanten, Ingenieure und Eigentümer koordiniert.</div>
+                <div class="evidence" data-de="Beschaffungsrisiken, Winterbetonage, Baustellenlogistik und Prozessverbesserungen bearbeitet." data-en="Managed procurement resilience, winter concreting, logistics, and site-level process improvements.">Beschaffungsrisiken, Winterbetonage, Baustellenlogistik und Prozessverbesserungen bearbeitet.</div>
+                <div class="evidence" data-de="Dieses Domänenwissen in BIM, Construction Informatics und KI-gestützte Entscheidungsunterstützung überführt." data-en="Extending this domain knowledge into BIM, construction informatics, and AI-assisted decision support.">Dieses Domänenwissen in BIM, Construction Informatics und KI-gestützte Entscheidungsunterstützung überführt.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="education">
         <div class="section-head">
-          <div><div class="section-index">06 · Education</div><h2>Engineering foundation, AI specialization</h2></div>
-          <p>A deliberate career transition from physical project systems to intelligent digital systems.</p>
+          <div>
+            <div class="section-index" data-de="06 · Ausbildung" data-en="06 · Education">06 · Ausbildung</div>
+            <h2 data-de="Ingenieurwissenschaftliche Basis, Spezialisierung in KI"
+                data-en="Engineering foundation, AI specialization">
+              Ingenieurwissenschaftliche Basis, Spezialisierung in KI
+            </h2>
+          </div>
+          <p data-de="Ein gezielter Übergang von physischen Projektsystemen zu intelligenten digitalen Systemen."
+             data-en="A deliberate career transition from physical project systems to intelligent digital systems.">
+            Ein gezielter Übergang von physischen Projektsystemen zu intelligenten digitalen Systemen.
+          </p>
         </div>
 
         <div class="education-grid">
-          <article class="panel edu-card"><div class="edu-type">In progress</div><h3>M.Sc. Artificial Intelligence</h3><div class="school">IU International University of Applied Sciences · Germany</div><p>Graduate work includes machine learning, deep learning, NLP, computer vision, reinforcement learning, Bayesian statistics, causal inference, responsible AI, and technical project planning.</p></article>
-          <article class="panel edu-card"><div class="edu-type">Completed</div><h3>B.Sc. Civil Engineering</h3><div class="school">Sharif University of Technology · Tehran, Iran</div><p>Engineering foundation supporting construction planning, structural understanding, technical coordination, and analytical problem-solving.</p></article>
+          <article class="panel edu-card">
+            <div class="edu-type" data-de="In Bearbeitung" data-en="In progress">In Bearbeitung</div>
+            <h3>M.Sc. Artificial Intelligence</h3>
+            <div class="school" data-de="IU International University of Applied Sciences · Deutschland" data-en="IU International University of Applied Sciences · Germany">IU International University of Applied Sciences · Deutschland</div>
+            <p data-de="Anwendungsbezogene Anwendungsbezogene Schwerpunkte: Machine Learning, Deep Learning, NLP, Computer Vision, Reinforcement Learning, Bayes-Statistik, Kausalinferenz, Responsible AI und technische Projektplanung."
+               data-en="Applied work covers machine learning, deep learning, NLP, computer vision, reinforcement learning, Bayesian statistics, causal inference, responsible AI, and technical project planning.">
+              Schwerpunkte: Machine Learning, Deep Learning, NLP, Computer Vision, Reinforcement Learning, Bayes-Statistik, Kausalinferenz, Responsible AI und technische Projektplanung.
+            </p>
+          </article>
+
+          <article class="panel edu-card">
+            <div class="edu-type" data-de="Abgeschlossen" data-en="Completed">Abgeschlossen</div>
+            <h3>B.Sc. Civil Engineering</h3>
+            <div class="school" data-de="Sharif University of Technology · Teheran, Iran" data-en="Sharif University of Technology · Tehran, Iran">Sharif University of Technology · Teheran, Iran</div>
+            <p data-de="Ingenieurwissenschaftliche Grundlage für Bauplanung, technisches Verständnis, Projektkoordination und analytische Problemlösung."
+               data-en="Engineering foundation supporting construction planning, structural understanding, technical coordination, and analytical problem-solving.">
+              Ingenieurwissenschaftliche Grundlage für Bauplanung, technisches Verständnis, Projektkoordination und analytische Problemlösung.
+            </p>
+          </article>
         </div>
 
-        <div class="language-row" aria-label="Languages"><div class="language">Persian · Native</div><div class="language">English · Professional working proficiency</div><div class="language">German · A1–A2</div></div>
+        <div class="language-row">
+          <div class="language" data-de="Persisch · Muttersprache" data-en="Persian · Native">Persisch · Muttersprache</div>
+          <div class="language" data-de="Englisch · Professionelle Arbeitskenntnisse" data-en="English · Professional working proficiency">Englisch · Professionelle Arbeitskenntnisse</div>
+          <div class="language" data-de="Deutsch · A1–A2" data-en="German · A1–A2">Deutsch · A1–A2</div>
+        </div>
       </section>
 
       <section class="section" id="contact">
         <div class="contact">
-          <div><h2>Looking for someone who understands both systems and execution?</h2><p>I am open to early-career opportunities in AI consulting, AI solutions, business intelligence, operations analysis, digital transformation, technical project coordination, and ConTech in Germany.</p></div>
-          <div class="contact-actions"><a class="btn btn-primary" href="mailto:samankarimi97@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/samankarimi97/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+          <div>
+            <h2 data-de="Sie suchen jemanden, der Systeme und Umsetzung versteht?"
+                data-en="Looking for someone who understands both systems and execution?">
+              Sie suchen jemanden, der Systeme und Umsetzung versteht?
+            </h2>
+            <p data-de="Ich bin offen für Einstiegspositionen in AI Consulting, AI Solutions, Business Intelligence, Operations-Analyse, digitaler Transformation, technischer Projektkoordination und ConTech in Deutschland."
+               data-en="I am open to early-career opportunities in AI consulting, AI solutions, business intelligence, operations analysis, digital transformation, technical project coordination, and ConTech in Germany.">
+              Ich bin offen für Einstiegspositionen in AI Consulting, AI Solutions, Business Intelligence, Operations-Analyse, digitaler Transformation, technischer Projektkoordination und ConTech in Deutschland.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:samankarimi97@gmail.com" data-de="E-Mail senden" data-en="Email me">E-Mail senden</a>
+            <a class="btn" href="https://www.linkedin.com/in/samankarimi97/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
-        <footer>© 2026 Saman Karimi · Built as a focused evidence portfolio.</footer>
+
+        <footer>
+          <span data-de="© 2026 Saman Karimi · Fokussiertes Kompetenzportfolio."
+                data-en="© 2026 Saman Karimi · Built as a focused evidence portfolio.">
+            © 2026 Saman Karimi · Fokussiertes Kompetenzportfolio.
+          </span>
+        </footer>
       </section>
     </main>
   </div>
 
-  <div class="toast" id="toast" role="status" aria-live="polite">Email copied</div>
+  <div class="toast" id="toast" role="status" aria-live="polite">E-Mail kopiert</div>
 
   <script>
     const root = document.documentElement;
@@ -663,23 +1121,82 @@
     const printButton = document.getElementById("printButton");
     const copyEmailButton = document.getElementById("copyEmailButton");
     const toast = document.getElementById("toast");
+    const mobileLangButton = document.getElementById("mobileLangButton");
+    const langDe = document.getElementById("langDe");
+    const langEn = document.getElementById("langEn");
     const navLinks = [...document.querySelectorAll(".nav-link")];
 
+    const pageMeta = {
+      de: {
+        title: "Saman Karimi | KI, Operations & Projektabwicklung",
+        description: "Portfolio von Saman Karimi – Künstliche Intelligenz, Projektabwicklung, Business Intelligence und digitale Transformation.",
+        ogDescription: "Angewandte KI und reale Projekterfahrung: Python, NLP, Business Intelligence, digitale Transformation und ConTech.",
+        toast: "E-Mail kopiert",
+        menu: "Navigation öffnen"
+      },
+      en: {
+        title: "Saman Karimi | AI, Operations & Project Delivery",
+        description: "Portfolio of Saman Karimi — Artificial Intelligence, project delivery, business intelligence, and digital transformation.",
+        ogDescription: "Applied AI and real project experience: Python, NLP, business intelligence, digital transformation, and ConTech.",
+        toast: "Email copied",
+        menu: "Open navigation"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const selected = lang === "en" ? "en" : "de";
+      root.lang = selected;
+
+      document.querySelectorAll("[data-de][data-en]").forEach(el => {
+        const value = el.dataset[selected];
+        if (value.includes("<br>")) el.innerHTML = value;
+        else el.textContent = value;
+      });
+
+      document.querySelectorAll("[data-aria-de][data-aria-en]").forEach(el => {
+        el.setAttribute("aria-label", selected === "de" ? el.dataset.ariaDe : el.dataset.ariaEn);
+      });
+
+      document.title = pageMeta[selected].title;
+      document.getElementById("meta-description").setAttribute("content", pageMeta[selected].description);
+      document.getElementById("og-title").setAttribute("content", pageMeta[selected].title);
+      document.getElementById("og-description").setAttribute("content", pageMeta[selected].ogDescription);
+
+      langDe.classList.toggle("active", selected === "de");
+      langEn.classList.toggle("active", selected === "en");
+      mobileLangButton.textContent = selected === "de" ? "EN" : "DE";
+
+      localStorage.setItem("saman-portfolio-language", selected);
+    }
+
+    // German is the default. English is used only after the visitor selects it.
+    const storedLanguage = localStorage.getItem("saman-portfolio-language");
+    applyLanguage(storedLanguage === "en" ? "en" : "de");
+
+    langDe.addEventListener("click", () => applyLanguage("de"));
+    langEn.addEventListener("click", () => applyLanguage("en"));
+    mobileLangButton.addEventListener("click", () => applyLanguage(root.lang === "de" ? "en" : "de"));
+
     const storedTheme = localStorage.getItem("portfolio-theme");
-    if (storedTheme === "dark" || storedTheme === "light") root.dataset.theme = storedTheme;
-    else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) root.dataset.theme = "dark";
+    if (storedTheme === "dark" || storedTheme === "light") {
+      root.dataset.theme = storedTheme;
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      root.dataset.theme = "dark";
+    }
 
     function toggleMenu(force) {
-      const shouldOpen = typeof force === "boolean" ? force : !sidebar.classList.contains("open");
-      sidebar.classList.toggle("open", shouldOpen);
-      overlay.classList.toggle("show", shouldOpen);
-      menuButton.setAttribute("aria-expanded", String(shouldOpen));
-      document.body.style.overflow = shouldOpen ? "hidden" : "";
+      const open = typeof force === "boolean" ? force : !sidebar.classList.contains("open");
+      sidebar.classList.toggle("open", open);
+      overlay.classList.toggle("show", open);
+      menuButton.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
     }
 
     menuButton.addEventListener("click", () => toggleMenu());
     overlay.addEventListener("click", () => toggleMenu(false));
-    navLinks.forEach(link => link.addEventListener("click", () => { if (window.innerWidth <= 820) toggleMenu(false); }));
+    navLinks.forEach(link => link.addEventListener("click", () => {
+      if (window.innerWidth <= 820) toggleMenu(false);
+    }));
 
     themeButton.addEventListener("click", () => {
       const next = root.dataset.theme === "dark" ? "light" : "dark";
@@ -691,38 +1208,49 @@
 
     copyEmailButton.addEventListener("click", async () => {
       const email = "samankarimi97@gmail.com";
-      try { await navigator.clipboard.writeText(email); }
-      catch {
-        const area = document.createElement("textarea"); area.value = email; document.body.appendChild(area); area.select(); document.execCommand("copy"); area.remove();
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch {
+        const area = document.createElement("textarea");
+        area.value = email;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
       }
+      toast.textContent = pageMeta[root.lang].toast;
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 1800);
     });
 
     const sections = [...document.querySelectorAll("main section[id]")];
     const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
       navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + visible.target.id));
-    }, { rootMargin: "-18% 0px -65% 0px", threshold: [0.01, 0.2, 0.5] });
+    }, { rootMargin: "-18% 0px -65% 0px", threshold: [0.01, .2, .5] });
     sections.forEach(section => observer.observe(section));
 
     const filterButtons = [...document.querySelectorAll(".filter-btn")];
     const projectCards = [...document.querySelectorAll(".project-card")];
+
     filterButtons.forEach(button => {
       button.addEventListener("click", () => {
         const filter = button.dataset.filter;
         filterButtons.forEach(item => item.classList.toggle("active", item === button));
-        projectCards.forEach(card => { card.hidden = filter !== "all" && card.dataset.category !== filter; });
+        projectCards.forEach(card => {
+          card.hidden = filter !== "all" && card.dataset.category !== filter;
+        });
       });
     });
 
     const skillTabs = [...document.querySelectorAll(".skill-tab")];
     const skillPanels = [...document.querySelectorAll(".skill-panel")];
+
     skillTabs.forEach(tab => {
       tab.addEventListener("click", () => {
         const key = tab.dataset.skill;
-        skillTabs.forEach(item => { const active = item === tab; item.classList.toggle("active", active); item.setAttribute("aria-selected", String(active)); });
+        skillTabs.forEach(item => item.classList.toggle("active", item === tab));
         skillPanels.forEach(panel => panel.classList.toggle("active", panel.id === "skill-" + key));
       });
     });
