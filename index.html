@@ -41,13 +41,13 @@
 
   <style>
     :root {
-      --sidebar: 292px;
+      --sidebar: 18.25rem;
       --bg: #f5f7fb;
       --surface: rgba(255,255,255,.68);
       --surface-solid: #fff;
       --surface-alt: #eef2ff;
       --text: #172033;
-      --muted: #667085;
+      --muted: #475569;
       --soft: #98a2b3;
       --line: rgba(23,32,51,.10);
       --primary: #5b5ce2;
@@ -58,7 +58,13 @@
       --nav-line: rgba(255,255,255,.10);
       --shadow: 0 22px 60px rgba(15,23,42,.10);
       --shadow-soft: 0 10px 30px rgba(15,23,42,.06);
-      --max: 1180px;
+      --max: 73.75rem;
+      --sidebar-bg: rgba(255, 255, 255, 0.15);
+      --sidebar-border: rgba(23, 32, 51, 0.08);
+      --sidebar-text: #172033;
+      --sidebar-muted: #4b5563;
+      --glow-1: rgba(91, 92, 226, 0.05);
+      --glow-2: rgba(6, 182, 212, 0.035);
     }
 
     html[data-theme="dark"] {
@@ -67,7 +73,7 @@
       --surface-solid: #151c2b;
       --surface-alt: #1d2540;
       --text: #f2f4f7;
-      --muted: #a8b0bf;
+      --muted: #cbd5e1;
       --soft: #7f899a;
       --line: rgba(255,255,255,.10);
       --primary: #8b8cf5;
@@ -76,19 +82,28 @@
       --success: #34d399;
       --shadow: 0 24px 70px rgba(0,0,0,.30);
       --shadow-soft: 0 12px 34px rgba(0,0,0,.22);
+      --sidebar-bg: rgba(13, 17, 27, 0.25);
+      --sidebar-border: rgba(255, 255, 255, 0.08);
+      --sidebar-text: #f2f4f7;
+      --sidebar-muted: #94a3b8;
+      --glow-1: rgba(139, 140, 245, 0.11);
+      --glow-2: rgba(34, 211, 238, 0.09);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      font-size: 90%;
+    }
     body {
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at 90% 0%, rgba(91,92,226,.10), transparent 30rem),
-        radial-gradient(circle at 70% 45%, rgba(6,182,212,.07), transparent 26rem),
+        radial-gradient(circle at 90% 0%, var(--glow-1), transparent 32rem),
+        radial-gradient(circle at 10% 50%, var(--glow-2), transparent 28rem),
         var(--bg);
       background-size: 150% 150%;
-      animation: bgBreathe 30s ease-in-out infinite alternate;
+      animation: bgBreathe 150s ease-in-out infinite alternate;
       color: var(--text);
       font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.65;
@@ -97,6 +112,14 @@
       cursor: default;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    .particle-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 41;
+      pointer-events: none;
+      background: transparent;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -113,18 +136,24 @@
     .sidebar {
       position: fixed; inset: 0 auto 0 0; z-index: 40;
       width: var(--sidebar); display: flex; flex-direction: column;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(91,92,226,.28), transparent 20rem),
-        linear-gradient(180deg, #111827, #0b1020 72%);
-      color: #f8fafc; border-right: 1px solid var(--nav-line);
-      overflow-y: auto; box-shadow: 18px 0 50px rgba(15,23,42,.14);
+      background-color: var(--sidebar-bg);
+      background-image: radial-gradient(circle at 15% 0%, rgba(91,92,226,.15), transparent 20rem);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--sidebar-text); border-right: 1px solid var(--sidebar-border);
+      box-shadow: 18px 0 50px rgba(15,23,42,.10);
+      overflow: visible;
+    }
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
     }
 
-    .sidebar-head { padding: 40px 26px 30px; border-bottom: 1px solid var(--nav-line); text-align: center; }
+    .sidebar-head { padding: 40px 26px 30px; border-bottom: 1px solid var(--sidebar-border); text-align: center; }
     .monogram { margin: 0 auto 20px; }
     .sidebar-name { font-size: 1.5rem; }
-    .sidebar-role { font-size: 0.9rem; line-height: 1.5; color: #94a3b8; }
-    .status { justify-content: center; background: rgba(5,150,105,0.08); border-color: rgba(52,211,153,0.1); }
 
     .monogram {
       width: 48px; height: 48px; display: grid; place-items: center;
@@ -134,13 +163,13 @@
       box-shadow: 0 12px 30px rgba(34,211,238,.16);
     }
     .sidebar-name { margin: 0; font-size: 1.35rem; letter-spacing: 0; }
-    .sidebar-role { margin: 6px 0 0; color: #b7c0d0; font-size: 0.95rem; line-height: 1.6; }
+    .sidebar-role { margin: 6px 0 0; color: var(--sidebar-muted); font-size: 0.95rem; line-height: 1.6; }
 
     .status {
-      display: flex; align-items: flex-start; gap: 10px;
+      display: flex; align-items: flex-start; justify-content: center; gap: 10px;
       margin: 18px 0 0; padding: 12px;
-      border: 1px solid rgba(52,211,153,.18); border-radius: 14px;
-      background: rgba(5,150,105,.10); color: #d1fae5;
+      border: 1px solid rgba(5,150,105,0.25); border-radius: 14px;
+      background: transparent; color: var(--success);
       font-size: .79rem; line-height: 1.6;
     }
     .status-dot {
@@ -159,19 +188,19 @@
     .nav-link {
       display: flex; align-items: center; gap: 12px; min-height: 44px;
       padding: 0 13px; border: 1px solid transparent; border-radius: 12px;
-      color: var(--nav-muted); font-size: 0.96rem; font-weight: 650;
+      color: var(--sidebar-muted); font-size: 0.96rem; font-weight: 650;
       transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
       cursor: pointer; user-select: none; -webkit-user-select: none;
     }
     .nav-link svg { width: 18px; height: 18px; }
-    .nav-link:hover { color: #fff; background: rgba(255,255,255,.06); transform: translateX(2px); }
+    .nav-link:hover { color: var(--sidebar-text); background: rgba(91,92,226,.08); transform: translateX(2px); }
     .nav-link.active {
-      color: #fff;
-      background: linear-gradient(90deg, rgba(91,92,226,.24), rgba(34,211,238,.08));
-      border-color: rgba(139,140,245,.22);
+      color: var(--primary-strong);
+      background: rgba(91, 92, 226, 0.08);
+      border-color: rgba(91, 92, 226, 0.18);
     }
 
-    .sidebar-foot { margin-top: auto; padding: 18px 20px 24px; border-top: 1px solid var(--nav-line); }
+    .sidebar-foot { margin-top: auto; padding: 18px 20px 24px; border-top: 1px solid var(--sidebar-border); }
 
     .language-switch {
       display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
@@ -198,12 +227,12 @@
     .side-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
     .side-btn {
       display: inline-flex; align-items: center; justify-content: center;
-      min-height: 41px; padding: 0 10px; border: 1px solid var(--nav-line);
-      border-radius: 11px; background: rgba(255,255,255,.04);
-      color: #e5e7eb; cursor: pointer; font-size: .78rem; font-weight: 750;
+      min-height: 41px; padding: 0 10px; border: 1px solid var(--sidebar-border);
+      border-radius: 11px; background: transparent;
+      color: var(--sidebar-text); cursor: pointer; font-size: .78rem; font-weight: 750;
     }
-    .side-btn:hover { background: rgba(255,255,255,.09); transform: translateY(-1px); }
-    .side-meta { margin: 14px 0 0; color: #7f8a9f; font-size: .72rem; text-align: center; }
+    .side-btn:hover { background: rgba(91,92,226,.10); transform: translateY(-1px); }
+    .side-meta { margin: 14px 0 0; color: var(--sidebar-muted); font-size: .72rem; text-align: center; }
 
     .mobile-bar {
       display: none; position: sticky; top: 0; z-index: 35; min-height: 66px;
@@ -220,12 +249,12 @@
     .mobile-lang { min-width: 44px; height: 38px; font-size: .72rem; font-weight: 850; }
     .menu-btn { width: 42px; height: 42px; display: grid; place-items: center; }
 
-    .page { min-height: 100vh; margin-left: var(--sidebar); }
-    .content { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; padding: 52px 0 72px; }
-    .section { padding: 34px 0 54px; scroll-margin-top: 32px; }
+    .page { position: relative; z-index: 2; min-height: 100vh; margin-left: var(--sidebar); }
+    .content { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; padding: 36px 0 56px; }
+    .section { padding: 20px 0 36px; scroll-margin-top: 32px; }
 
     .hero {
-      position: relative; overflow: hidden; padding: clamp(30px,5vw,58px);
+      position: relative; overflow: hidden; padding: clamp(24px,4vw,44px);
       border: 1px solid var(--line); border-radius: 34px;
       background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(239,242,255,.86)), var(--surface-solid);
       box-shadow: var(--shadow);
@@ -253,7 +282,7 @@
 
     h1 {
       max-width: 940px; margin: 0;
-      font-size: clamp(2.2rem, 5vw, 4.5rem); /* Reduced maximum size */
+      font-size: clamp(2rem, 4vw, 3.5rem); /* Balanced maximum size */
       line-height: 1.15; /* Increased for breathing room */
       letter-spacing: -0.02em; /* Less aggressive negative spacing */
     }
@@ -267,7 +296,7 @@
     @keyframes shine {
       to { background-position: 200% center; }
     }
-    .hero-copy { max-width: 830px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1.1rem,1.6vw,1.25rem); }
+    .hero-copy { max-width: 830px; margin: 20px 0 0; color: var(--muted); font-size: clamp(1rem,1.3vw,1.1rem); }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
     .btn {
@@ -299,14 +328,14 @@
     }
     .section-head > div:first-child { min-width: 0; }
     .section-index { color: var(--primary); font-size: .75rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    .section-head h2 { margin: 2px 0 0; font-size: clamp(1.85rem,3vw,2.7rem); letter-spacing: -0.01em; }
+    .section-head h2 { margin: 2px 0 0; font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing: -0.01em; }
     .section-head p {
       width: 100%;
       max-width: 360px;
       justify-self: end;
       margin: 0;
       color: var(--muted);
-      text-align: right;
+      text-align: left;
       line-height: 1.55;
     }
 
@@ -461,7 +490,7 @@
     a:focus-visible, button:focus-visible { outline: 3px solid rgba(34,211,238,.34); outline-offset: 3px; }
 
     @media (max-width:1040px) {
-      :root { --sidebar: 260px; }
+      :root { --sidebar: 16.25rem; }
       .metric-grid, .project-scale { grid-template-columns: 1fr; }
       .thesis-list { grid-template-columns: 1fr 1fr; }
       .skills-layout { grid-template-columns: 1fr; }
@@ -544,6 +573,7 @@
 </head>
 
 <body>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main" data-de="Zum Hauptinhalt springen" data-en="Skip to main content">Zum Hauptinhalt springen</a>
 
   <div class="mobile-bar">
@@ -559,66 +589,68 @@
   </div>
 
   <aside class="sidebar" id="sidebar" aria-label="Portfolio-Navigation" data-aria-de="Portfolio-Navigation" data-aria-en="Portfolio navigation">
-    <div class="sidebar-head">
-      <div class="monogram" aria-hidden="true">SK</div>
-      <h2 class="sidebar-name">Saman Karimi</h2>
-      <p class="sidebar-role"
-         data-de="Künstliche Intelligenz · Projektabwicklung · Digitale Transformation"
-         data-en="Artificial Intelligence · Project Delivery · Digital Transformation">
-        Künstliche Intelligenz · Projektabwicklung · Digitale Transformation
-      </p>
-      <div class="status">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span data-de="In Deutschland ansässig."
-              data-en="Based in Germany.">
-          In Deutschland ansässig.
-        </span>
+    <div class="sidebar-content">
+      <div class="sidebar-head">
+        <div class="monogram" aria-hidden="true">SK</div>
+        <h2 class="sidebar-name">Saman Karimi</h2>
+        <p class="sidebar-role"
+           data-de="Künstliche Intelligenz · Projektabwicklung · Digitale Transformation"
+           data-en="Artificial Intelligence · Project Delivery · Digital Transformation">
+          Künstliche Intelligenz · Projektabwicklung · Digitale Transformation
+        </p>
+        <div class="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-de="In Deutschland ansässig."
+                data-en="Based in Germany.">
+            In Deutschland ansässig.
+          </span>
+        </div>
       </div>
-    </div>
 
-    <nav class="sidebar-nav">
-      <a class="nav-link active" href="#overview">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>
-        <span data-de="Überblick" data-en="Overview">Überblick</span>
-      </a>
-      <a class="nav-link" href="#profile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
-        <span data-de="Profil" data-en="Profile">Profil</span>
-      </a>
-      <a class="nav-link" href="#experience">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
-        <span data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</span>
-      </a>
-      <a class="nav-link" href="#projects">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
-        <span data-de="Projekte" data-en="Projects">Projekte</span>
-      </a>
-      <a class="nav-link" href="#thesis">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M8 7h8M8 11h6"/></svg>
-        <span data-de="Masterarbeit" data-en="Thesis">Masterarbeit</span>
-      </a>
-      <a class="nav-link" href="#skills">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
-        <span data-de="Kompetenzen & Nachweise" data-en="Skills & Evidence">Kompetenzen & Nachweise</span>
-      </a>
-      <a class="nav-link" href="#education">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.5V17l5 2.5 5-2.5v-4.5"/></svg>
-        <span data-de="Ausbildung" data-en="Education">Ausbildung</span>
-      </a>
-      <a class="nav-link" href="#contact">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-        <span data-de="Kontakt" data-en="Contact">Kontakt</span>
-      </a>
-    </nav>
+      <nav class="sidebar-nav">
+        <a class="nav-link active" href="#overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>
+          <span data-de="Überblick" data-en="Overview">Überblick</span>
+        </a>
+        <a class="nav-link" href="#profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+          <span data-de="Profil" data-en="Profile">Profil</span>
+        </a>
+        <a class="nav-link" href="#experience">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+          <span data-de="Berufserfahrung" data-en="Experience">Berufserfahrung</span>
+        </a>
+        <a class="nav-link" href="#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>
+          <span data-de="Projekte" data-en="Projects">Projekte</span>
+        </a>
+        <a class="nav-link" href="#thesis">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M8 7h8M8 11h6"/></svg>
+          <span data-de="Masterarbeit" data-en="Thesis">Masterarbeit</span>
+        </a>
+        <a class="nav-link" href="#skills">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+          <span data-de="Kompetenzen & Nachweise" data-en="Skills & Evidence">Kompetenzen & Nachweise</span>
+        </a>
+        <a class="nav-link" href="#education">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.5V17l5 2.5 5-2.5v-4.5"/></svg>
+          <span data-de="Ausbildung" data-en="Education">Ausbildung</span>
+        </a>
+        <a class="nav-link" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <span data-de="Kontakt" data-en="Contact">Kontakt</span>
+        </a>
+      </nav>
 
-    <div class="sidebar-foot">
-      <div class="side-actions">
-        <a class="side-btn" href="https://github.com/samankarimi97" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="side-btn" href="https://www.linkedin.com/in/samankarimi97/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <button class="side-btn" id="themeButton" type="button" data-de="Darstellung" data-en="Theme">Darstellung</button>
-        <button class="side-btn" id="printButton" type="button" data-de="Drucken" data-en="Print">Drucken</button>
+      <div class="sidebar-foot">
+        <div class="side-actions">
+          <a class="side-btn" href="https://github.com/samankarimi97" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="side-btn" href="https://www.linkedin.com/in/samankarimi97/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <button class="side-btn" id="themeButton" type="button" data-de="Darstellung" data-en="Theme">Darstellung</button>
+          <button class="side-btn" id="printButton" type="button" data-de="Drucken" data-en="Print">Drucken</button>
+        </div>
+        <p class="side-meta">Portfolio · 2026</p>
       </div>
-      <p class="side-meta">Portfolio · 2026</p>
     </div>
   </aside>
 
@@ -867,9 +899,9 @@
               Entwickelt, konzipiert und untersucht
             </h2>
           </div>
-          <p data-de="Ein fokussiertes Kompetenzportfolio – keine reine Liste von Studienmodulen."
-             data-en="A focused evidence portfolio—not a list of course names.">
-            Ein fokussiertes Kompetenzportfolio – keine reine Liste von Studienmodulen.
+          <p data-de="Ein fokussiertes Kompetenzportfolio."
+             data-en="A focused evidence portfolio.">
+            Ein fokussiertes Kompetenzportfolio.
           </p>
         </div>
 
@@ -1340,6 +1372,170 @@
     }, { rootMargin: '0px 0px -20px 0px', threshold: 0.05 });
 
     revealTargets.forEach(el => revealObserver.observe(el));
+
+    // --- Interactive Particle Grid Logic ---
+    (function() {
+      const canvas = document.getElementById('particleCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+      
+      const particles = [];
+      const isMobile = window.innerWidth <= 820;
+      const particleCount = isMobile ? 32 : 68;
+      const connectionDistance = isMobile ? 85 : 115;
+      const mouse = { x: null, y: null, radius: isMobile ? 100 : 155 };
+      
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+      
+      // Desktop mouse tracking
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+      
+      window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      // Mobile touch tracking
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+        }
+      });
+
+      window.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) {
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+        }
+      });
+
+      window.addEventListener('touchend', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+      
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * (isMobile ? 0.35 : 0.45);
+          this.vy = (Math.random() - 0.5) * (isMobile ? 0.35 : 0.45);
+          this.radius = Math.random() * (isMobile ? 1.5 : 2.2) + 1;
+        }
+        
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+          
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < mouse.radius) {
+              const force = (mouse.radius - dist) / mouse.radius;
+              const angle = Math.atan2(dy, dx);
+              this.x += Math.cos(angle) * force * 0.7;
+              this.y += Math.sin(angle) * force * 0.7;
+            }
+          }
+        }
+        
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+      
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        const isDark = document.documentElement.dataset.theme === 'dark';
+
+        // --- Mouse Spotlight / Glow Backlight ---
+        if (mouse.x !== null && mouse.y !== null) {
+          ctx.beginPath();
+          const gradient = ctx.createRadialGradient(
+            mouse.x, mouse.y, 0,
+            mouse.x, mouse.y, mouse.radius
+          );
+          
+          if (isDark) {
+            gradient.addColorStop(0, 'rgba(34, 211, 238, 0.08)');
+            gradient.addColorStop(0.5, 'rgba(34, 211, 238, 0.03)');
+            gradient.addColorStop(1, 'rgba(34, 211, 238, 0)');
+          } else {
+            gradient.addColorStop(0, 'rgba(91, 92, 226, 0.07)');
+            gradient.addColorStop(0.5, 'rgba(91, 92, 226, 0.02)');
+            gradient.addColorStop(1, 'rgba(91, 92, 226, 0)');
+          }
+          
+          ctx.fillStyle = gradient;
+          ctx.arc(mouse.x, mouse.y, mouse.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        
+        ctx.fillStyle = isDark ? 'rgba(139, 140, 245, 0.40)' : 'rgba(91, 92, 226, 0.32)';
+        
+        for (let i = 0; i < particles.length; i++) {
+          const p1 = particles[i];
+          p1.update();
+          p1.draw();
+          
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+            if (dist < connectionDistance) {
+              const alpha = (1 - dist / connectionDistance);
+              ctx.strokeStyle = isDark 
+                ? `rgba(139, 140, 245, ${alpha * 0.15})` 
+                : `rgba(91, 92, 226, ${alpha * 0.13})`;
+              ctx.lineWidth = 0.9;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+          
+          if (mouse.x !== null && mouse.y !== null) {
+            const dist = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+            if (dist < mouse.radius) {
+              const alpha = (1 - dist / mouse.radius);
+              ctx.strokeStyle = isDark 
+                ? `rgba(34, 211, 238, ${alpha * 0.40})` 
+                : `rgba(6, 182, 212, ${alpha * 0.35})`;
+              ctx.lineWidth = 1.3;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.stroke();
+            }
+          }
+        }
+        
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+    })();
 
   </script>
 </body>
